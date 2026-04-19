@@ -36,3 +36,6 @@ yarn-error.log*
 
 # OS
 Thumbs.db
+backend/docs/
+backend/rag/docs/
+*.pdf
