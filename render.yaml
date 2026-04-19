@@ -4,7 +4,8 @@ services:
     runtime: python
     pythonVersion: 3.11
     buildCommand: "pip install -r backend/requirements.txt"
-    startCommand: "cd backend && gunicorn -w 4 -b 0.0.0.0:8000 fastapi.app:app"
+    startCommand: "gunicorn -w 4 -b 0.0.0.0:8000 fastapi.app:app"
+    workingDirectory: ./backend
     envVars:
       - key: DATABASE_URL
         scope: secret
@@ -15,14 +16,29 @@ services:
       - key: DEBUG
         value: "false"
     healthCheckPath: /health
-    rootDir: .
+    healthCheckInterval: 30
+    port: 8000
 
   - type: web
     name: taxassist-frontend
     runtime: node
-    buildCommand: "cd taxeaseui && npm ci && npm run build"
-    startCommand: "cd taxeaseui && npm start"
+    nodeVersion: 18
+    buildCommand: "npm ci && npm run build"
+    startCommand: "npm start"
+    workingDirectory: ./taxeaseui
     envVars:
       - key: NEXT_PUBLIC_BACKEND_URL
-        value: https://taxassist-backend.onrender.com
-    rootDir: .
+        scope: env_specific
+        preview:
+          value: https://taxassist-backend.onrender.com
+        production:
+          value: https://taxassist-backend.onrender.com
+    port: 3000
+
+databases:
+  - name: taxassist-db
+    databaseName: taxassist
+    user: taxassist
+    plan: free
+    version: 15
+    region: oregon
