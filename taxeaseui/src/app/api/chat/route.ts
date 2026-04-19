@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 
-const BACKEND =
-  process.env.BACKEND_URL ??
-  process.env.NEXT_PUBLIC_BACKEND_URL ??
-  "http://localhost:8000";
+const BACKEND = process.env.NEXT_PUBLIC_API_URL;
+
+if (!BACKEND) {
+  throw new Error("NEXT_PUBLIC_API_URL is not set");
+}
 
 export async function POST(request: Request) {
   try {
@@ -13,15 +14,22 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Query is required" }, { status: 400 });
     }
 
-    const res = await fetch(`${BACKEND}/chat`, {
+    const res = await fetch(`${BACKEND}/api/chat`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: body.query.trim(), debug: body.debug ?? false }),
-      // No timeout in Node fetch by default; long RAG queries can take ~10s
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: body.query.trim(),
+        debug: body.debug ?? false,
+      }),
     });
 
     if (!res.ok) {
-      const err = await res.json().catch(() => ({ detail: "Unknown backend error" }));
+      const err = await res.json().catch(() => ({
+        detail: "Unknown backend error",
+      }));
+
       return NextResponse.json(
         { error: err.detail ?? "Backend error" },
         { status: res.status }
@@ -33,7 +41,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("[/api/chat] error:", error);
     return NextResponse.json(
-      { error: "Failed to reach TaxAssist backend. Is the server running?" },
+      { error: "Failed to reach TaxAssist backend" },
       { status: 503 }
     );
   }
