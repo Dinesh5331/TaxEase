@@ -39,3 +39,4 @@ Thumbs.db
 backend/docs/
 backend/rag/docs/
 *.pdf
+*.zip
