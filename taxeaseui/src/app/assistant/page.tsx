@@ -77,7 +77,7 @@ export default function AssistantPage() {
         ...prev,
         {
           role: "assistant",
-          content: `⚠️ Error: ${message}\n\nMake sure the TaxAssist backend server is running:\n\`cd backend && uvicorn server:app --reload\``,
+          content: `Error: ${message}\n\nMake sure the TaxAssist backend server is running:\n\`cd backend/fastapi && ..\\myenv\\Scripts\\python.exe -m uvicorn app:app --reload --port 8000 --reload-dir ..\``,
         },
       ]);
     } finally {
@@ -179,7 +179,7 @@ export default function AssistantPage() {
           <span>
             Backend is offline. Start it with:{" "}
             <code className="bg-amber-100 px-1 rounded font-mono">
-              cd backend &amp;&amp; uvicorn server:app --reload
+              cd backend/fastapi &amp;&amp; ..\myenv\Scripts\python.exe -m uvicorn app:app --reload --port 8000 --reload-dir ..
             </code>
           </span>
         </div>

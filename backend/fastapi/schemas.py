@@ -46,5 +46,6 @@ class ChatResponse(BaseModel):
 
 class HealthResponse(BaseModel):
     status: str
+    rag_loaded: bool
     chunk_count: int
     forms_indexed: list[str]
