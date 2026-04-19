@@ -21,7 +21,7 @@ TaxAssist/
 
 ## Prerequisites
 
-- **Python 3.11+** for backend
+- **Python 3.14.3+** for backend
 - **Node.js 18+** and npm for frontend
 - **PostgreSQL 12+** for database
 - **Tesseract OCR** for text extraction
@@ -138,7 +138,7 @@ Ensure PostgreSQL is running and the database exists. The application automatica
 
 Create `backend/Dockerfile`:
 ```dockerfile
-FROM python:3.11-slim
+FROM python:3.14.3-slim
 WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
