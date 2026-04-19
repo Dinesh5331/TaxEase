@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 
-const BACKEND =
-  process.env.BACKEND_URL ??
-  process.env.NEXT_PUBLIC_BACKEND_URL ??
-  "http://localhost:8000";
+const BACKEND = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function GET() {
   try {
-    const res = await fetch(`${BACKEND}/health`, {
+    const res = await fetch(`${BACKEND}/api/health`, {
       cache: "no-store",
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+      },
     });
     const data = await res.json();
     return NextResponse.json(data, { status: res.status });

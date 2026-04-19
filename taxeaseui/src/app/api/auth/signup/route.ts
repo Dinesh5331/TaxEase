@@ -1,43 +1,37 @@
 import { NextResponse } from "next/server";
 
-const BACKEND =
-  process.env.BACKEND_URL ??
-  process.env.NEXT_PUBLIC_BACKEND_URL ??
-  "http://localhost:8000";
+const BACKEND = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-
-    const res = await fetch(`${BACKEND}/auth/signup`, {
+    const res = await fetch(`${BACKEND}/api/auth/signup`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "ngrok-skip-browser-warning": "true",
+      },
       body: JSON.stringify({
         name: body.name,
         email: body.email,
         password: body.password,
       }),
     });
-
     const data = await res.json();
-
     if (!res.ok) {
       return NextResponse.json(
         { error: data.detail ?? "Signup failed" },
         { status: res.status }
       );
     }
-
-    // Set the JWT as an httpOnly cookie
     const response = NextResponse.json({ user: data.user });
     response.cookies.set("taxease_token", data.access_token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
+      maxAge: 60 * 60 * 24 * 7,
       path: "/",
     });
-
     return response;
   } catch {
     return NextResponse.json(

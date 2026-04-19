@@ -1,29 +1,23 @@
 import { NextResponse } from "next/server";
 
-const BACKEND =
-  process.env.BACKEND_URL ??
-  process.env.NEXT_PUBLIC_BACKEND_URL ??
-  "http://localhost:8000";
+const BACKEND = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
 
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
     const file = formData.get("file");
-
     if (!file) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
-
-    // Forward the file to the FastAPI backend as multipart
     const backendForm = new FormData();
     backendForm.append("file", file as Blob, (file as File).name);
-
-    const res = await fetch(`${BACKEND}/upload`, {
+    const res = await fetch(`${BACKEND}/api/upload`, {
       method: "POST",
+      headers: {
+        "ngrok-skip-browser-warning": "true",
+      },
       body: backendForm,
-      // Note: do NOT set Content-Type header — fetch sets it automatically with boundary
     });
-
     if (!res.ok) {
       const err = await res.json().catch(() => ({ detail: "Unknown backend error" }));
       return NextResponse.json(
@@ -31,7 +25,6 @@ export async function POST(request: Request) {
         { status: res.status }
       );
     }
-
     const data = await res.json();
     return NextResponse.json(data);
   } catch (error) {
@@ -42,4 +35,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
