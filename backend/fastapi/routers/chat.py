@@ -8,6 +8,8 @@ import zipfile
 
 router = APIRouter()
 
+os.environ["CUDA_VISIBLE_DEVICES"] = ""
+
 
 def download_docs():
     if not os.path.exists("rag/docs") or not os.listdir("rag/docs"):
