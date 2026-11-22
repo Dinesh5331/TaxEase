@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "YRIPM6853E",
+    "aadhaar_masked": "XXXXXXXX9269",
+    "name": "Karthik Menon",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX5762",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-194A",
+        "description": "Interest other than securities",
+        "source": "Fictional Bank Ltd",
+        "tan": "RHPS27198T",
+        "amount_paid": 380000,
+        "tax_deducted": 38000,
+        "status": "Active",
+        "reported_value": 380000,
+        "modified_value": 380000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-RENT",
+        "description": "Rent received (194-I / 194-IB)",
+        "amount": 420000,
+        "status": "Active",
+        "reported_value": 420000,
+        "modified_value": 420000
+      }
+    ]
+  }
+}

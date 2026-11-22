@@ -1,0 +1,17 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults: { run: { working-directory: backend } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: sudo apt-get update && sudo apt-get install -y poppler-utils
+      # Light dependencies only: the rules engine, extractors, regime/compliance and eval gate need no ML stack.
+      - run: pip install pyyaml reportlab pypdf fastapi httpx python-multipart python-jose bcrypt email-validator sqlalchemy
+      - run: python scripts/generate_demo_data.py      # *.pdf is gitignored, so demo PDFs are regenerated
+      - run: python -m unittest discover -s tests -v
+      - run: python -m eval.run_eval engine             # must stay at 100% of golden_itr.json
+        env: { SECRET_KEY: ci-only }

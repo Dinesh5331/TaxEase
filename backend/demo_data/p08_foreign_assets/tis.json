@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "UIPPJ7064D",
+  "name": "Meera Joshi",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 2800000,
+      "processed_value": 2800000,
+      "derived_value": 2800000
+    },
+    {
+      "category": "Foreign remittance (LRS)",
+      "information_value": 900000,
+      "processed_value": 900000,
+      "derived_value": 900000
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "UIPPJ7064D",
+    "aadhaar_masked": "XXXXXXXX2360",
+    "name": "Meera Joshi",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX4257",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Northwind Industries Pvt Ltd",
+        "tan": "EOAC10028O",
+        "amount_paid": 2800000,
+        "tax_deducted": 413400,
+        "status": "Active",
+        "reported_value": 2800000,
+        "modified_value": 2800000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "TCS-206C(1G)",
+        "description": "Remittance under Liberalised Remittance Scheme",
+        "amount": 900000,
+        "status": "Active",
+        "reported_value": 900000,
+        "modified_value": 900000
+      }
+    ]
+  }
+}

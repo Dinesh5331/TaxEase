@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "OYUPV4088P",
+    "aadhaar_masked": "XXXXXXXX4047",
+    "name": "Anjali Verma",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX7389",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "BluePeak Systems Pvt Ltd",
+        "tan": "UQGZ77744E",
+        "amount_paid": 2000000,
+        "tax_deducted": 192400,
+        "status": "Active",
+        "reported_value": 2000000,
+        "modified_value": 2000000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

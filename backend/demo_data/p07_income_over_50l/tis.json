@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "NRVPK1550J",
+  "name": "Arjun Kapoor",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 6200000,
+      "processed_value": 6200000,
+      "derived_value": 6200000
+    }
+  ]
+}

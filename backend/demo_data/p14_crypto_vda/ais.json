@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "CMJPS4067L",
+    "aadhaar_masked": "XXXXXXXX9596",
+    "name": "Rahul Singhania",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX5486",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Northwind Labs Pvt Ltd",
+        "tan": "OPYN47705O",
+        "amount_paid": 1300000,
+        "tax_deducted": 26000,
+        "status": "Active",
+        "reported_value": 1300000,
+        "modified_value": 1300000
+      },
+      {
+        "information_code": "TDS-194S",
+        "description": "Transfer of virtual digital asset",
+        "source": "Fictional Exchange",
+        "tan": "KQPO25742Q",
+        "amount_paid": 420000,
+        "tax_deducted": 4200,
+        "status": "Active",
+        "reported_value": 420000,
+        "modified_value": 420000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

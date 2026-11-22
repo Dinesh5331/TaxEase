@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "CNVPB3623E",
+    "aadhaar_masked": "XXXXXXXX6685",
+    "name": "Ishita Bose",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX6790",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-194J",
+        "description": "Fees for professional or technical services",
+        "source": "Fictional Clients Pvt Ltd",
+        "tan": "MADM19625B",
+        "amount_paid": 2660000,
+        "tax_deducted": 266000,
+        "status": "Active",
+        "reported_value": 2660000,
+        "modified_value": 2660000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [
+      {
+        "information_code": "TAX-ADV",
+        "description": "Advance tax",
+        "source": "Income Tax Department",
+        "amount": 152000,
+        "date": "15/03/2026",
+        "status": "Active",
+        "reported_value": 152000,
+        "modified_value": 152000
+      }
+    ],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-GST",
+        "description": "Turnover as per GST returns (GSTR-3B)",
+        "amount": 3800000,
+        "status": "Active",
+        "reported_value": 3800000,
+        "modified_value": 3800000
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "IABPD3455U",
+    "aadhaar_masked": "XXXXXXXX8645",
+    "name": "Pooja Desai",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX9376",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Orchid Industries Pvt Ltd",
+        "tan": "ZQPL36193I",
+        "amount_paid": 1100000,
+        "tax_deducted": 0,
+        "status": "Active",
+        "reported_value": 1100000,
+        "modified_value": 1100000
+      }
+    ],
+    "sft_information": [
+      {
+        "information_code": "SFT-017",
+        "description": "Sale of securities and units of mutual fund",
+        "source": "Fictional Securities Pvt Ltd",
+        "amount": 588000,
+        "note": "sale consideration; cost and gain not reported in AIS",
+        "status": "Active",
+        "reported_value": 588000,
+        "modified_value": 588000
+      },
+      {
+        "information_code": "SFT-015",
+        "description": "Purchase of units of mutual fund",
+        "source": "Fictional AMC",
+        "amount": 280000,
+        "status": "Active",
+        "reported_value": 280000,
+        "modified_value": 280000
+      }
+    ],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

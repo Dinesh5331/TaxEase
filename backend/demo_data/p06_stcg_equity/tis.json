@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "IABPD3455U",
+  "name": "Pooja Desai",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1100000,
+      "processed_value": 1100000,
+      "derived_value": 1100000
+    },
+    {
+      "category": "Sale of securities and units of mutual fund",
+      "information_value": 588000,
+      "processed_value": 588000,
+      "derived_value": 588000
+    },
+    {
+      "category": "Purchase of units of mutual fund",
+      "information_value": 280000,
+      "processed_value": 280000,
+      "derived_value": 280000
+    }
+  ]
+}

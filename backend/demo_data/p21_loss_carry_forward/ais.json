@@ -1,0 +1,35 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "FRAPA9869V",
+    "aadhaar_masked": "XXXXXXXX9866",
+    "name": "Yash Agarwal",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX8845",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Orchid Industries Pvt Ltd",
+        "tan": "IZEH13062A",
+        "amount_paid": 1400000,
+        "tax_deducted": 81900,
+        "status": "Active",
+        "reported_value": 1400000,
+        "modified_value": 1400000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

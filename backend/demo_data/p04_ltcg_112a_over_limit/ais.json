@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "QQZPQ1415S",
+    "aadhaar_masked": "XXXXXXXX8701",
+    "name": "Sana Qureshi",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX3333",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Northwind Systems Pvt Ltd",
+        "tan": "BWQV23444W",
+        "amount_paid": 1600000,
+        "tax_deducted": 113100,
+        "status": "Active",
+        "reported_value": 1600000,
+        "modified_value": 1600000
+      }
+    ],
+    "sft_information": [
+      {
+        "information_code": "SFT-017",
+        "description": "Sale of securities and units of mutual fund",
+        "source": "Fictional Securities Pvt Ltd",
+        "amount": 756000,
+        "note": "sale consideration; cost and gain not reported in AIS",
+        "status": "Active",
+        "reported_value": 756000,
+        "modified_value": 756000
+      },
+      {
+        "information_code": "SFT-015",
+        "description": "Purchase of units of mutual fund",
+        "source": "Fictional AMC",
+        "amount": 360000,
+        "status": "Active",
+        "reported_value": 360000,
+        "modified_value": 360000
+      }
+    ],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "YAAPP9362P",
+  "name": "Harish Patel",
+  "summary": [
+    {
+      "category": "Interest from savings bank",
+      "information_value": 12000,
+      "processed_value": 12000,
+      "derived_value": 12000
+    },
+    {
+      "category": "Business receipts (GST / TDS 194J)",
+      "information_value": 14000000,
+      "processed_value": 14000000,
+      "derived_value": 14000000
+    }
+  ]
+}

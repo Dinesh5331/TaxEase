@@ -33,18 +33,8 @@ type OcrResult = {
   itr_recommendation: string;
 };
 
-// Fallback data shown when no real OCR result is available (demo mode)
-const DEMO_DATA: ExtractedData = {
-  employee_name: "Demo User",
-  pan: "ABCDE1234F",
-  employer_name: "Acme Corp Ltd.",
-  assessment_year: "2024-25",
-  total_salary: "12,80,000",
-  gross_income: "12,80,000",
-  taxable_income: "11,30,000",
-  deductions: { "80C": "1,50,000", "80D": "0" },
-  tds: "1,24,800",
-};
+// No uploaded document yet: show empty fields, never invented figures.
+const EMPTY_DATA: ExtractedData = {};
 
 function fmt(v?: string) {
   if (!v || v === "" || v === "null" || v === "N/A") return "—";
@@ -58,7 +48,7 @@ export default function MappingPage() {
     taxes: false,
   });
   const [ocrResult, setOcrResult] = useState<OcrResult | null>(null);
-  const [data, setData] = useState<ExtractedData>(DEMO_DATA);
+  const [data, setData] = useState<ExtractedData>(EMPTY_DATA);
   const [isDemo, setIsDemo] = useState(false);
   const [editingField, setEditingField] = useState<EditableField | null>(null);
   const [editingValue, setEditingValue] = useState("");
@@ -70,14 +60,14 @@ export default function MappingPage() {
       if (raw) {
         const parsed = JSON.parse(raw) as OcrResult;
         setOcrResult(parsed);
-        setData(parsed.extracted_data ?? DEMO_DATA);
+        setData(parsed.extracted_data ?? EMPTY_DATA);
         setIsDemo(false);
       } else {
-        setData(DEMO_DATA);
+        setData(EMPTY_DATA);
         setIsDemo(true);
       }
     } catch {
-      setData(DEMO_DATA);
+      setData(EMPTY_DATA);
       setIsDemo(true);
     }
   }, []);
@@ -146,8 +136,8 @@ export default function MappingPage() {
         <div className="flex items-center gap-2 px-4 py-3 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 text-xs">
           <Info className="w-4 h-4 shrink-0" />
           <span>
-            Showing <strong>demo data</strong>. Upload a Form 16 on the{" "}
-            <a href="/upload" className="underline">Upload page</a> to see real extracted data here.
+            <strong>No uploaded document found.</strong> Upload a Form 16 on the{" "}
+            <a href="/upload" className="underline">Upload page</a> to see extracted data here.
           </span>
         </div>
       )}
@@ -155,10 +145,12 @@ export default function MappingPage() {
       {/* Status bar */}
       <div className="flex items-center justify-between pb-4 border-b border-slate-200">
         <div className="flex gap-3">
-          <div className="flex items-center gap-2 text-sm text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 font-medium">
-            <CheckCircle2 className="w-4 h-4" />
-            Fields Mapped Successfully
-          </div>
+          {!isDemo && (
+            <div className="flex items-center gap-2 text-sm text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg border border-emerald-100 font-medium">
+              <CheckCircle2 className="w-4 h-4" />
+              Fields Mapped Successfully
+            </div>
+          )}
           {!has80D && (
             <div className="flex items-center gap-2 text-sm text-amber-600 bg-amber-50 px-3 py-1.5 rounded-lg border border-amber-100 font-medium">
               <AlertTriangle className="w-4 h-4" />

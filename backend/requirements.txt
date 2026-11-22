@@ -1,24 +1,30 @@
+# NOTE: versions below were not install-tested in this environment (no network). Run `pip install -r requirements.txt` and report conflicts.
+# --- RAG ---
 faiss-cpu==1.13.2
 rank-bm25==0.2.2
-groq==1.1.2
-pymupdf==1.24.14
-
-langchain==0.2.16
-langchain-core==0.2.38
-
-python-dotenv==1.0.1
-numpy==1.26.4
-Pillow==10.4.0
-pytesseract==0.3.13
-
-sentence-transformers==2.2.2   # 🔥 lighter + CPU friendly
-
+sentence-transformers>=3.0.1,<6      # old 2.2.2 pin breaks with current huggingface_hub
+langchain-core>=0.3,<2
+langchain-text-splitters>=0.3,<2
+groq>=1.1.2
+numpy>=1.26,<3
+# --- OCR / PDF ---
+pymupdf>=1.24.14
+Pillow>=10.4.0
+pytesseract==0.3.13                  # also needs the Tesseract binary installed on the host
+# --- API ---
 fastapi>=0.111.0
 uvicorn[standard]>=0.29.0
 gunicorn>=21.0.0
-
 python-multipart>=0.0.9
+email-validator>=2.0                 # required by pydantic EmailStr
+python-dotenv>=1.0.1
+pyyaml>=6.0                          # rules engine (Phase 3)
+# --- DB / auth ---
 sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.0
-passlib[bcrypt]>=1.7.4
+bcrypt>=4.0
 python-jose[cryptography]>=3.3.0
+# --- demo data generator (Phase 2) ---
+reportlab>=4.0
+pypdf>=4.0                           # Form 16 text fallback when poppler/PyMuPDF are unavailable
+httpx>=0.27                           # FastAPI TestClient (tests/test_api_contract.py)

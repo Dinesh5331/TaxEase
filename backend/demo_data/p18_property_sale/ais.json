@@ -1,0 +1,46 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "JDDPK6739K",
+    "aadhaar_masked": "XXXXXXXX2956",
+    "name": "Sameer Khan",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX7130",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Kestrel Analytics Pvt Ltd",
+        "tan": "MKTG87864O",
+        "amount_paid": 1700000,
+        "tax_deducted": 130000,
+        "status": "Active",
+        "reported_value": 1700000,
+        "modified_value": 1700000
+      },
+      {
+        "information_code": "TDS-194IA",
+        "description": "Transfer of immovable property other than agricultural land",
+        "source": "Buyer (individual)",
+        "tan": "PAN-based",
+        "amount_paid": 6800000,
+        "tax_deducted": 68000,
+        "status": "Active",
+        "reported_value": 6800000,
+        "modified_value": 6800000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

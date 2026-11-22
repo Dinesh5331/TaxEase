@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "GNTPM6511O",
+    "aadhaar_masked": "XXXXXXXX3840",
+    "name": "Dev Malhotra",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX1741",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Orchid Systems Pvt Ltd",
+        "tan": "VWCR62318B",
+        "amount_paid": 1800000,
+        "tax_deducted": 150800,
+        "status": "Active",
+        "reported_value": 1800000,
+        "modified_value": 1800000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [
+      {
+        "information_code": "TAX-ADV",
+        "description": "Advance tax",
+        "source": "Income Tax Department",
+        "amount": 210800,
+        "date": "15/03/2026",
+        "status": "Active",
+        "reported_value": 210800,
+        "modified_value": 210800
+      }
+    ],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-GST",
+        "description": "Turnover as per GST returns (GSTR-3B)",
+        "amount": 2600000,
+        "status": "Active",
+        "reported_value": 2600000,
+        "modified_value": 2600000
+      }
+    ]
+  }
+}

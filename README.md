@@ -81,7 +81,7 @@ Tax-related information can be difficult to navigate across forms, rules, and el
 ```text
 TaxEase/
 ├── backend/
-│   ├── fastapi/          # API application and route handlers
+│   ├──  api/     # API application and route handlers
 │   ├── rag/              # Retrieval and response-generation pipeline
 │   ├── ocr/              # OCR and document extraction utilities
 │   └── requirements.txt  # Python dependencies
@@ -167,7 +167,7 @@ NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
 Start the backend from the `backend` directory with the virtual environment activated:
 
 ```bash
-python -m uvicorn fastapi.app:app --reload --host 0.0.0.0 --port 8000
+python -m uvicorn api.app:app --reload --host 0.0.0.0 --port 8000
 ```
 
 Start the frontend from the `taxeaseui` directory in another terminal:

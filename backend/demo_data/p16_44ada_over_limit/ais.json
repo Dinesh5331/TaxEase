@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "RYSPK4513S",
+    "aadhaar_masked": "XXXXXXXX4039",
+    "name": "Neel Kulkarni",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX2741",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-194J",
+        "description": "Fees for professional or technical services",
+        "source": "Fictional Clients Pvt Ltd",
+        "tan": "FDVB56694X",
+        "amount_paid": 4340000,
+        "tax_deducted": 434000,
+        "status": "Active",
+        "reported_value": 4340000,
+        "modified_value": 4340000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [
+      {
+        "information_code": "TAX-ADV",
+        "description": "Advance tax",
+        "source": "Income Tax Department",
+        "amount": 248000,
+        "date": "15/03/2026",
+        "status": "Active",
+        "reported_value": 248000,
+        "modified_value": 248000
+      }
+    ],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-GST",
+        "description": "Turnover as per GST returns (GSTR-3B)",
+        "amount": 6200000,
+        "status": "Active",
+        "reported_value": 6200000,
+        "modified_value": 6200000
+      }
+    ]
+  }
+}

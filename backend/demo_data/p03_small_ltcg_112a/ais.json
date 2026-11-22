@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "ONCPI7533S",
+    "aadhaar_masked": "XXXXXXXX9595",
+    "name": "Rohit Iyer",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX5237",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Orchid Industries Pvt Ltd",
+        "tan": "DNQZ88664P",
+        "amount_paid": 1200000,
+        "tax_deducted": 0,
+        "status": "Active",
+        "reported_value": 1200000,
+        "modified_value": 1200000
+      }
+    ],
+    "sft_information": [
+      {
+        "information_code": "SFT-016(SB)",
+        "description": "Interest from savings bank account",
+        "source": "Fictional Bank Ltd",
+        "amount": 9000,
+        "status": "Active",
+        "reported_value": 9000,
+        "modified_value": 9000
+      },
+      {
+        "information_code": "SFT-017",
+        "description": "Sale of securities and units of mutual fund",
+        "source": "Fictional Securities Pvt Ltd",
+        "amount": 378000,
+        "note": "sale consideration; cost and gain not reported in AIS",
+        "status": "Active",
+        "reported_value": 378000,
+        "modified_value": 378000
+      },
+      {
+        "information_code": "SFT-015",
+        "description": "Purchase of units of mutual fund",
+        "source": "Fictional AMC",
+        "amount": 180000,
+        "status": "Active",
+        "reported_value": 180000,
+        "modified_value": 180000
+      }
+    ],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

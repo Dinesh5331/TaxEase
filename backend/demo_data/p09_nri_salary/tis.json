@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "YRIPM6853E",
+  "name": "Karthik Menon",
+  "summary": [
+    {
+      "category": "Interest from deposit / other",
+      "information_value": 380000,
+      "processed_value": 380000,
+      "derived_value": 380000
+    },
+    {
+      "category": "Rent received",
+      "information_value": 420000,
+      "processed_value": 420000,
+      "derived_value": 420000
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "JDOPR1188V",
+    "aadhaar_masked": "XXXXXXXX6062",
+    "name": "Nisha Rao",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX1405",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Kestrel Labs Pvt Ltd",
+        "tan": "GMIL56745Z",
+        "amount_paid": 1900000,
+        "tax_deducted": 171600,
+        "status": "Active",
+        "reported_value": 1900000,
+        "modified_value": 1900000
+      },
+      {
+        "information_code": "TDS-194A",
+        "description": "Interest other than securities",
+        "source": "Fictional Bank Ltd",
+        "tan": "XQUC54616C",
+        "amount_paid": 42000,
+        "tax_deducted": 4200,
+        "status": "Active",
+        "reported_value": 42000,
+        "modified_value": 42000
+      },
+      {
+        "information_code": "TDS-194",
+        "description": "Dividend",
+        "source": "Fictional Industries Ltd",
+        "tan": "RRJJ69958E",
+        "amount_paid": 24000,
+        "tax_deducted": 2400,
+        "status": "Active",
+        "reported_value": 24000,
+        "modified_value": 24000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-RENT",
+        "description": "Rent received (194-I / 194-IB)",
+        "amount": 360000,
+        "status": "Active",
+        "reported_value": 360000,
+        "modified_value": 360000
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "OYUPV4088P",
+  "name": "Anjali Verma",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 2000000,
+      "processed_value": 2000000,
+      "derived_value": 2000000
+    }
+  ]
+}

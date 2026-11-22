@@ -1,0 +1,918 @@
+[
+  {
+    "id": "p01_salaried_simple",
+    "title": "Salaried, savings interest only",
+    "expected_itr": "ITR-1",
+    "reasons": [
+      "i1_sources"
+    ],
+    "pan": "DKQPM9385U",
+    "name": "Aarav Mehta",
+    "dob": "1990-06-15",
+    "approx_total_income": 1393000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1450000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 18000,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p02_two_house_props",
+    "title": "Salaried + 1 let-out and 1 self-occupied property + dividends",
+    "expected_itr": "ITR-1",
+    "reasons": [
+      "i1_sources"
+    ],
+    "pan": "JDOPR1188V",
+    "name": "Nisha Rao",
+    "dob": "1990-06-15",
+    "approx_total_income": 2142999,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1900000,
+      "hp_count": 2,
+      "rent_received": 360000,
+      "interest_savings": 0,
+      "interest_fd": 42000,
+      "dividend": 24000,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p03_small_ltcg_112a",
+    "title": "Salaried + LTCG 112A of 90k (within 1.25L)",
+    "expected_itr": "ITR-1",
+    "reasons": [
+      "i1_cg"
+    ],
+    "pan": "ONCPI7533S",
+    "name": "Rohit Iyer",
+    "dob": "1990-06-15",
+    "approx_total_income": 1224000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1200000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 9000,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 90000,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p04_ltcg_112a_over_limit",
+    "title": "Salaried + LTCG 112A of 1.8L (over 1.25L)",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_cg"
+    ],
+    "pan": "QQZPQ1415S",
+    "name": "Sana Qureshi",
+    "dob": "1990-06-15",
+    "approx_total_income": 1705000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1600000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 180000,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p05_three_house_props",
+    "title": "Salaried + 3 house properties",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_sources"
+    ],
+    "pan": "UWOPN8690W",
+    "name": "Vikram Nair",
+    "dob": "1990-06-15",
+    "approx_total_income": 2703000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 2400000,
+      "hp_count": 3,
+      "rent_received": 540000,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p06_stcg_equity",
+    "title": "Salaried + STCG on equity (111A) and MF redemption",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_cg"
+    ],
+    "pan": "IABPD3455U",
+    "name": "Pooja Desai",
+    "dob": "1990-06-15",
+    "approx_total_income": 1165000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1100000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 140000,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p07_income_over_50l",
+    "title": "Salaried, total income above 50 lakh",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_income_cap"
+    ],
+    "pan": "NRVPK1550J",
+    "name": "Arjun Kapoor",
+    "dob": "1990-06-15",
+    "approx_total_income": 6125000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 6200000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p08_foreign_assets",
+    "title": "Salaried with foreign brokerage account (LRS remittances)",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_foreign"
+    ],
+    "pan": "UIPPJ7064D",
+    "name": "Meera Joshi",
+    "dob": "1990-06-15",
+    "approx_total_income": 2725000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": true,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 2800000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 900000,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p09_nri_salary",
+    "title": "Non-resident, India-sourced interest and rent",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_resident"
+    ],
+    "pan": "YRIPM6853E",
+    "name": "Karthik Menon",
+    "dob": "1990-06-15",
+    "approx_total_income": 674000,
+    "questionnaire": {
+      "residential_status": "NR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 0,
+      "hp_count": 1,
+      "rent_received": 420000,
+      "interest_savings": 0,
+      "interest_fd": 380000,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p10_freelancer_44ada",
+    "title": "Freelance consultant, receipts 38L, 44ADA",
+    "expected_itr": "ITR-4",
+    "reasons": [],
+    "pan": "CNVPB3623E",
+    "name": "Ishita Bose",
+    "dob": "1990-06-15",
+    "approx_total_income": 1900000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 0,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "44ADA",
+        "receipts": 3800000,
+        "cash_pct": 2,
+        "profession": "Consulting"
+      }
+    },
+    "files": [
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p11_trader_44ad",
+    "title": "Retail trader, turnover 1.4 Cr, 44AD",
+    "expected_itr": "ITR-4",
+    "reasons": [],
+    "pan": "YAAPP9362P",
+    "name": "Harish Patel",
+    "dob": "1990-06-15",
+    "approx_total_income": 852000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 0,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 12000,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "44AD",
+        "receipts": 14000000,
+        "cash_pct": 30,
+        "profession": "Retail trade"
+      }
+    },
+    "files": [
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p12_fno_trader_salaried",
+    "title": "Salaried + F&O trading (non-presumptive)",
+    "expected_itr": "ITR-3",
+    "reasons": [],
+    "pan": "GNTPM6511O",
+    "name": "Dev Malhotra",
+    "dob": "1990-06-15",
+    "approx_total_income": 2635000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1800000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "FNO",
+        "receipts": 2600000,
+        "cash_pct": 0,
+        "profession": "F&O trading"
+      }
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p13_director",
+    "title": "Salaried and director in a private company",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_director"
+    ],
+    "pan": "OYUPV4088P",
+    "name": "Anjali Verma",
+    "dob": "1990-06-15",
+    "approx_total_income": 1925000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": true,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 2000000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p14_crypto_vda",
+    "title": "Salaried + crypto (VDA) transfer",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_special"
+    ],
+    "pan": "CMJPS4067L",
+    "name": "Rahul Singhania",
+    "dob": "1990-06-15",
+    "approx_total_income": 1435000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1300000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 420000,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p15_44ada_75l_limit_ok",
+    "title": "Architect, receipts 62L, cash 3% (limit is 75L)",
+    "expected_itr": "ITR-4",
+    "reasons": [],
+    "pan": "HACPP8440U",
+    "name": "Tara Pillai",
+    "dob": "1990-06-15",
+    "approx_total_income": 3100000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 0,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "44ADA",
+        "receipts": 6200000,
+        "cash_pct": 3,
+        "profession": "Architect"
+      }
+    },
+    "files": [
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p16_44ada_over_limit",
+    "title": "Architect, receipts 62L, cash 8% (limit stays 50L)",
+    "expected_itr": "ITR-3",
+    "reasons": [],
+    "pan": "RYSPK4513S",
+    "name": "Neel Kulkarni",
+    "dob": "1990-06-15",
+    "approx_total_income": 3100000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 0,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "44ADA",
+        "receipts": 6200000,
+        "cash_pct": 8,
+        "profession": "Architect"
+      }
+    },
+    "files": [
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p17_partner_in_firm",
+    "title": "Partner in a firm (remuneration + interest) + salary",
+    "expected_itr": "ITR-3",
+    "reasons": [],
+    "pan": "QKIPS2047J",
+    "name": "Gauri Shetty",
+    "dob": "1990-06-15",
+    "approx_total_income": 2025000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": true
+    },
+    "facts": {
+      "salary": 900000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": {
+        "kind": "PARTNER",
+        "receipts": 1200000,
+        "cash_pct": 0,
+        "profession": "Partner remuneration"
+      }
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p18_property_sale",
+    "title": "Salaried + sold a flat (LTCG on property)",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_cg"
+    ],
+    "pan": "JDDPK6739K",
+    "name": "Sameer Khan",
+    "dob": "1990-06-15",
+    "approx_total_income": 3925000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1700000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 2300000,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p19_senior_pension",
+    "title": "Senior citizen: pension + FD interest",
+    "expected_itr": "ITR-1",
+    "reasons": [
+      "i1_sources"
+    ],
+    "pan": "JLBPS8155A",
+    "name": "Ramesh Subramanian",
+    "dob": "1958-03-02",
+    "approx_total_income": 677000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 420000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 22000,
+      "interest_fd": 310000,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p20_agri_income",
+    "title": "Salaried + agricultural income of 40k",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_sources"
+    ],
+    "pan": "BEQPN6800T",
+    "name": "Lakshmi Naidu",
+    "dob": "1990-06-15",
+    "approx_total_income": 975000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": false,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1050000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 40000,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  },
+  {
+    "id": "p21_loss_carry_forward",
+    "title": "Salaried with a capital loss to carry forward",
+    "expected_itr": "ITR-2",
+    "reasons": [
+      "i1_losses"
+    ],
+    "pan": "FRAPA9869V",
+    "name": "Yash Agarwal",
+    "dob": "1990-06-15",
+    "approx_total_income": 1325000,
+    "questionnaire": {
+      "residential_status": "ROR",
+      "director": false,
+      "unlisted_equity": false,
+      "foreign_asset_or_income": false,
+      "loss_carry_forward": true,
+      "esop_deferral": false,
+      "partner_in_firm": false
+    },
+    "facts": {
+      "salary": 1400000,
+      "hp_count": 0,
+      "rent_received": 0,
+      "interest_savings": 0,
+      "interest_fd": 0,
+      "dividend": 0,
+      "ltcg_112a": 0,
+      "stcg_111a": 0,
+      "ltcg_property": 0,
+      "vda_transfer": 0,
+      "agri_income": 0,
+      "lrs_remittance": 0,
+      "business": null
+    },
+    "files": [
+      "form16.pdf",
+      "ais.json",
+      "ais.pdf",
+      "tis.json",
+      "tis.pdf"
+    ]
+  }
+]

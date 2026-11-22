@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "UWOPN8690W",
+  "name": "Vikram Nair",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 2400000,
+      "processed_value": 2400000,
+      "derived_value": 2400000
+    },
+    {
+      "category": "Rent received",
+      "information_value": 540000,
+      "processed_value": 540000,
+      "derived_value": 540000
+    }
+  ]
+}

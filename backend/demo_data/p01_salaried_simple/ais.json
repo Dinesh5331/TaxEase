@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "DKQPM9385U",
+    "aadhaar_masked": "XXXXXXXX8226",
+    "name": "Aarav Mehta",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX4931",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "BluePeak Systems Pvt Ltd",
+        "tan": "TTRN85047R",
+        "amount_paid": 1450000,
+        "tax_deducted": 89700,
+        "status": "Active",
+        "reported_value": 1450000,
+        "modified_value": 1450000
+      }
+    ],
+    "sft_information": [
+      {
+        "information_code": "SFT-016(SB)",
+        "description": "Interest from savings bank account",
+        "source": "Fictional Bank Ltd",
+        "amount": 18000,
+        "status": "Active",
+        "reported_value": 18000,
+        "modified_value": 18000
+      }
+    ],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

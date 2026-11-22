@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "YAAPP9362P",
+    "aadhaar_masked": "XXXXXXXX3521",
+    "name": "Harish Patel",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX9513",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [],
+    "sft_information": [
+      {
+        "information_code": "SFT-016(SB)",
+        "description": "Interest from savings bank account",
+        "source": "Fictional Bank Ltd",
+        "amount": 12000,
+        "status": "Active",
+        "reported_value": 12000,
+        "modified_value": 12000
+      }
+    ],
+    "payment_of_taxes": [
+      {
+        "information_code": "TAX-ADV",
+        "description": "Advance tax",
+        "source": "Income Tax Department",
+        "amount": 68160,
+        "date": "15/03/2026",
+        "status": "Active",
+        "reported_value": 68160,
+        "modified_value": 68160
+      }
+    ],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-GST",
+        "description": "Turnover as per GST returns (GSTR-3B)",
+        "amount": 14000000,
+        "status": "Active",
+        "reported_value": 14000000,
+        "modified_value": 14000000
+      }
+    ]
+  }
+}
