@@ -1,1 +1,1 @@
-web: cd backend && gunicorn -w 4 -b 0.0.0.0:8000 fastapi.app:app
+web: cd backend && gunicorn -k uvicorn.workers.UvicornWorker -w 1 -b 0.0.0.0:$PORT api.app:app --timeout 180

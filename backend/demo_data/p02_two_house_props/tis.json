@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "JDOPR1188V",
+  "name": "Nisha Rao",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1900000,
+      "processed_value": 1900000,
+      "derived_value": 1900000
+    },
+    {
+      "category": "Interest from deposit / other",
+      "information_value": 42000,
+      "processed_value": 42000,
+      "derived_value": 42000
+    },
+    {
+      "category": "Dividend",
+      "information_value": 24000,
+      "processed_value": 24000,
+      "derived_value": 24000
+    },
+    {
+      "category": "Rent received",
+      "information_value": 360000,
+      "processed_value": 360000,
+      "derived_value": 360000
+    }
+  ]
+}

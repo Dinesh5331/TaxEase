@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "JLBPS8155A",
+  "name": "Ramesh Subramanian",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 420000,
+      "processed_value": 420000,
+      "derived_value": 420000
+    },
+    {
+      "category": "Interest from savings bank",
+      "information_value": 22000,
+      "processed_value": 22000,
+      "derived_value": 22000
+    },
+    {
+      "category": "Interest from deposit / other",
+      "information_value": 310000,
+      "processed_value": 310000,
+      "derived_value": 310000
+    }
+  ]
+}

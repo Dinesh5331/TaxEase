@@ -1,0 +1,128 @@
+[भाग II—खण्ड 3(i)]                                 भारत का रािपत्र : असाधारण                                                           5
+
+
+“FORM                                                                                                        Assessment Year
+                  INDIAN INCOME TAX RETURN VERIFICATION
+ITR-V                             FORM                                                                          2026-27
+                           [Where the data of the Return of Income in Form ITR-1 (SAHAJ),
+                          ITR-2, ITR-3, ITR-4(SUGAM), ITR-5, ITR-7 filed but NOT verified
+                                                     electronically]
+                                       (Please see rule 12 of the Income-tax Rules, 1962)
+
+
+Name
+PAN                                       Form Number
+
+Filed u/s                                 e-Filing Acknowledgement
+                                          Number
+
+                                                       VERIFICATION
+I,                 son/ daughter of                        , solemnly declare that to the best of my knowledge and belief, the
+information given in the return which has been submitted by me vide acknowledgement number                                   is
+correct and complete and is in accordance with the provisions of the Income-tax Act, 1961.
+I further declare that I am making this return in my capacity as                                and I am also competent to make this
+return and verify it. I am holding permanent account number                                 .
+
+
+Signature
+
+
+
+
+Date of submission                                       Source IP address
+
+System Generated Barcode/QR Code
+
+
+Instructions:
+1.   This is not an evidence for having filed the return of income, as verification is pending. The acknowledgement
+     for having filed the return will be provided only after verifying the return through any of the specified modes.
+2.   Please e- verify the electronically transmitted return data using Aadhaar OTP or Login to e-Filing account
+     through Net-Banking login or EVC generated using Pre-Validated Bank Account/ Demat Account or EVC
+     generated through Bank ATM. Alternately, you may send the duly signed (preferably in blue ink) Form ITRV
+     to “Centralized Processing Centre, Income Tax Department, Bengaluru 560500”, by SPEED POST ONLY.
+3.   Form ITR-V shall not be received in any other office of the Income-tax Department or in any other manner.
+     The confirmation of receipt of this Form ITR-V at ITD-CPC will be sent to the e-mail Id registered in the e-
+     filing account.
+4.   On successful verification, the return filing acknowledgement can be downloaded from e-Filing portal as a
+     proof of completion of process of filing the return of Income
+5.   Please sign only in the box provided for signature. Signature anywhere else other than the box provided can
+     render the ITR V invalid.
+6.   Where ITR data is electronically transmitted and ITR-V is submitted within 30 days of transmission of data -
+     in such cases the date of transmitting the data electronically shall be considered as the date of furnishing the
+     return of income.
+7.   Where ITR data is electronically transmitted but ITR-V is submitted beyond the time-limit of 30 days of
+     transmission of data - in such cases the date of ITR-V submission shall be treated as the date of furnishing the
+     return of income and all consequences of late filing of return under the Act shall follow.”
+6                                                                 THE GAZETTE OF INDIA : EXTRAORDINARY                                  [PART II—SEC. 3(i)]
+
+                                           (b) for FORM ITR- Ack, the following FORM shall, be substituted, namely: —
+                                          “INDIAN INCOME TAX RETURN ACKNOWLEDGEMENT                                                     Assessment Year
+                                              [Where the data of the Return of Income in Form ITR-1 (SAHAJ), ITR-2, ITR-3,
+                                                         ITR-4(SUGAM), ITR-5, ITR-6, ITR-7 filed and verified]
+                                                                                                                                          2026-27
+                                                                   (Please see rule 12 of the Income-tax Rules, 1962)
+
+ PAN
+
+ Name
+
+ Address
+
+ Status                                                                      Form Number
+
+ Filed u/s                                                                   e-Filing Acknowledgement Number
+
+                                          Current Year business loss, if any                                              1
+         Taxable Income and Tax details
+
+
+
+
+                                          Total Income                                                                   1A
+
+                                          Book Profit under MAT, where applicable                                         2
+
+                                          Adjusted Total Income under AMT, where applicable                               3
+                                          Net tax payable                                                                 4
+                                          Interest and Fee Payable                                                        5
+                                          Total tax, interest and Fee payable                                             6
+                                          Taxes Paid                                                                      7
+                                          (+)Tax Payable /(-)Refundable (6-7)                                             8
+                                          Accreted Income as per section 115TD                                            9
+    Accreted Income & Tax
+
+
+
+
+                                          Additional Tax payable u/s 115TD                                               10
+                                          Interest payable u/s 115TE                                                     11
+            Detail
+
+
+
+
+                                          Additional Tax and interest payable                                            12
+                                          Tax and interest paid                                                          13
+                                          (+)Tax Payable /(-)Refundable (12-13)                                          14
+ Income Tax Return electronically transmitted on DD-MM-YYYY 00:00:00 from IP address __________________ and
+ verified by__________________________ having PAN_________________ on ______________________using *paper ITR-
+ Verification    Form    /   Electronic    Verification Code   _____________________     generated   through
+ _______________________________________________mode
+
+ System Generated Barcode/QR Code
+
+* Strike off whichever is not applicable
+DO NOT SEND THIS ACKNOWLEDGEMENT TO CPC, BENGALURU.”
+                                                                                                       [Notification No. 51 /2026/F. No.370142/12 /2026-TPL]
+                                                                                                  PRADEEP SHARMA, Dy. Secy., Tax Policy and Legislation
+
+
+Note.- The Income-tax Rules, 1962 rules were published in the Gazette of India, Extraordinary, Part II, Section 3, sub-
+section(ii) vide number S.O. 969 (E), dated the 26th March, 1962 and was last amended vide notification GSR 231 (E),
+dated the 30th March, 2026.
+
+
+                                              Uploaded by Dte. of Printing at Government of India Press, Ring Road, Mayapuri, New Delhi-110064
+                                                                and Published by the Controller of Publications, Delhi-110054.
+

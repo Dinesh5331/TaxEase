@@ -1,4 +1,4 @@
-from rag.config import DOCUMENT_SOURCES, INDEX_SCHEMA_VERSION
+from rag.config import DOCUMENT_SOURCES, INDEX_SCHEMA_VERSION, PROJECT_ROOT
 from rag.loader import load_all_documents, split_documents
 from rag.vector_store import (
     create_vectorstore,
@@ -31,7 +31,7 @@ def _build_manifest():
             stat = file_path.stat()
             files.append(
                 {
-                    "path": str(file_path),
+                    "path": file_path.relative_to(PROJECT_ROOT).as_posix(),
                     "source": source["source"],
                     "size": stat.st_size,
                     "modified_ns": stat.st_mtime_ns,
@@ -95,7 +95,18 @@ def main():
 
     print("\n===== RESULT =====\n")
     print(result)
-
+        
+def initialize_rag():
+    """Call this from routers to lazy-load the RAG pipeline."""
+    get_embedding_model()
+    get_reranker()
+    index, docs = setup()
+    model = get_model()
+    return {
+        "model": model,
+        "index": index,
+        "docs": docs,
+    }
 
 if __name__ == "__main__":
     main()

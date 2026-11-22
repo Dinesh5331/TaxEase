@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "JLBPS8155A",
+    "aadhaar_masked": "XXXXXXXX1919",
+    "name": "Ramesh Subramanian",
+    "date_of_birth": "1958-03-02",
+    "mobile": "XXXXXX2844",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Zenith Labs Pvt Ltd",
+        "tan": "JXYZ26032J",
+        "amount_paid": 420000,
+        "tax_deducted": 0,
+        "status": "Active",
+        "reported_value": 420000,
+        "modified_value": 420000
+      },
+      {
+        "information_code": "TDS-194A",
+        "description": "Interest other than securities",
+        "source": "Fictional Bank Ltd",
+        "tan": "KSAR54890G",
+        "amount_paid": 310000,
+        "tax_deducted": 31000,
+        "status": "Active",
+        "reported_value": 310000,
+        "modified_value": 310000
+      }
+    ],
+    "sft_information": [
+      {
+        "information_code": "SFT-016(SB)",
+        "description": "Interest from savings bank account",
+        "source": "Fictional Bank Ltd",
+        "amount": 22000,
+        "status": "Active",
+        "reported_value": 22000,
+        "modified_value": 22000
+      }
+    ],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": []
+  }
+}

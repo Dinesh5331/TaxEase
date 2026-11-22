@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "DKQPM9385U",
+  "name": "Aarav Mehta",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1450000,
+      "processed_value": 1450000,
+      "derived_value": 1450000
+    },
+    {
+      "category": "Interest from savings bank",
+      "information_value": 18000,
+      "processed_value": 18000,
+      "derived_value": 18000
+    }
+  ]
+}

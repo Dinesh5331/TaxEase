@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "QKIPS2047J",
+  "name": "Gauri Shetty",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 900000,
+      "processed_value": 900000,
+      "derived_value": 900000
+    },
+    {
+      "category": "Business receipts (GST / TDS 194J)",
+      "information_value": 1200000,
+      "processed_value": 1200000,
+      "derived_value": 1200000
+    }
+  ]
+}

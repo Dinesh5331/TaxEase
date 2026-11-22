@@ -7,6 +7,7 @@ from PIL import Image
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from rag.config import CHUNK_SIZE, CHUNK_OVERLAP
+from rag.sections import legal_meta, section_chunks
 
 
 def clean_text(text):
@@ -65,14 +66,18 @@ def load_documents(folder_path, source_type, source_label=None):
         document_name = pdf_path.stem
         document_key = normalize_document_key(document_name)
         form_name = _extract_form_name(file_name)
+        law_pages = []        # (page, raw text with line breaks) for section-aware chunking of statutes
 
         for page_num in range(len(pdf)):
             page = pdf[page_num]
-            native_text = clean_text(page.get_text())
+            raw_text = page.get_text()
+            native_text = clean_text(raw_text)
             was_ocr = False
 
             if native_text:
                 text = native_text
+                if source_type == "law":
+                    law_pages.append((page_num + 1, raw_text))
             else:
                 try:
                     text = _ocr_page(page)
@@ -81,11 +86,12 @@ def load_documents(folder_path, source_type, source_label=None):
                     print(f"  ⚠️  OCR failed for {file_name} page {page_num + 1}: {ocr_err}")
                     text = ""
 
-            if text:
+            if text and not (source_type == "law" and native_text):
                 documents.append(
                     Document(
                         page_content=text,
                         metadata={
+                            **legal_meta(file_name),
                             "source": source_type,
                             "source_label": source_label or source_type,
                             "file": file_name,
@@ -100,6 +106,14 @@ def load_documents(folder_path, source_type, source_label=None):
                         }
                     )
                 )
+
+        if law_pages:
+            base = {"source": source_type, "source_label": source_label or source_type, "file": file_name,
+                    "path": str(pdf_path), "folder": folder.name, "document_name": document_name,
+                    "document_key": document_key, "form_name": form_name, "itr_number": None, "ocr": False,
+                    "prechunked": True}
+            for chunk_text, meta in section_chunks(law_pages, base):
+                documents.append(Document(page_content=chunk_text, metadata=meta))
 
     # ---- Plain text files (.txt) ----
     for txt_path in sorted(folder.rglob("*.txt")):
@@ -119,6 +133,7 @@ def load_documents(folder_path, source_type, source_label=None):
                 Document(
                     page_content=text,
                     metadata={
+                        **legal_meta(file_name),
                         "source": source_type,
                         "source_label": source_label or source_type,
                         "file": file_name,
@@ -157,4 +172,6 @@ def split_documents(documents):
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP
     )
-    return splitter.split_documents(documents)
+    prechunked = [d for d in documents if d.metadata.get("prechunked")]
+    rest = [d for d in documents if not d.metadata.get("prechunked")]
+    return prechunked + splitter.split_documents(rest)

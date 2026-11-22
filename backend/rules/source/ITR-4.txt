@@ -1,0 +1,535 @@
+[भाग II—खण्ड 3(i)]                                       भारत का रािपत्र : असाधारण                                                                19
+ Schedule-IT Details of Advance Tax and Self-Assessment Tax payments
+                                BSR Code             Date of Deposit                                Serial Number of              Tax paid
+                                 Col (1)                 Col (2)
+                                                    (DD/MM/YYYY)                                         Col (3)
+                                                                                                         Challan                  Col (4)
+ R1
+
+ R2
+
+ Schedule-TDS Details of TDS/TCS [As per Form 16/16A/16C/27D issued by the Deductor(s)/ Employer(s)/ Payer(s)/
+ Collector(s)]
+ S.            TAN of         Name of the     Section       Gross       Year of tax       Tax       TDS/TCS
+ No.    deductor/Collector     Deductor/       under       payment/     deduction/     Deducted/    credit out
+         or PAN/ Aadhaar   Collector/Tenant    which        receipt      collection     collected     of (6)
+         No. of the Tenant                    TDS is       which is                                  claimed
+                                             deducted     subject to                                this Year
+                                                              tax
+                                                          deduction
+                                                          /collection
+ Col            Col (2)                    Col (3a)               Col (3b)              Col (4)            Col (5)          Col (6)         Col (7)
+ (1)
+ T1
+
+ T2
+
+
+                                                                  VERIFICATION
+ Stamp Receipt No., I,                          son/ daughter of                      solemnly declare that to the best of my knowledge and belief,
+Seal, Date & Sign of the information given in the return is correct and complete and is in accordance with the provisions of the Income-tax Act,
+ Receiving Official 1961. I further declare that I am making this return in my capacity as ___________(drop down to be provided in e-filing utility)
+                     and I am also competent to make this return and verify it. I am holding permanent account number                     .(Please
+                     see instruction).
+                     Date:                                                                    Signature:
+
+If the return has been prepared by a Tax Return Preparer (TRP) give further details below:
+Identification No. of TRP                  Name of TRP                                                           Counter Signature of TRP
+
+If TRP is entitled for any reimbursement from the Government, amount thereof ’;
+
+
+(b)       for FORM ITR-4, the following FORM shall be substituted, namely: –––
+
+                                       INDIAN INCOME TAX RETURN                                                           Assessment Year
+                         [For Individuals, HUFs and Firms (other than LLP) being a resident having total income
+                        upto Rs.50 lakh and having income from business and profession which is computed under
+FORM
+
+
+
+
+        ITR-4             sections 44AD, 44ADA or 44AE, and having long-term capital gains under section 112A
+                                                             upto Rs. 1.25 lakh]
+       SUGAM               [Not for an individual who is either Director in a company or has invested in unlisted
+                         equity shares or if income-tax is deferred on ESOP or has agricultural income more than
+                          Rs. 5000 or has assets (including financial interest in any entity) located outside India)]
+                                                                                                                        2026-27
+                                                        (Refer rules for eligibility)
+
+
+
+PART A GENERAL INFORMATION
+(A1) First Name             (A2) Middle Name                                             (A3) Last Name                 (A4) Permanent Account
+                                                                                                                        Number
+
+(A5) Date of Birth/Formation                            Addresses to be provided for communication purposes:
+(DD/MM/YYYY)
+                                                        Primary Address: (A6a) Flat/Door/Block No. (A7a)Name of
+                                                        Premises/Building/Village (A8a) Road/Street/Post Office (A9a)
+                                                        Area/Locality (A10a) Town/City/District      (A11a) State (A12a)
+                                                        Country          (A13a) PIN code
+
+
+                                                        Secondary Address: (A6b) Flat/Door/Block No. (A7b)Name of
+                                                        Premises/Building/Village (A8b) Road/Street/Post Office (A9b)
+                                                        Area/Locality (A10b) Town/City/District (A11b) State (A12b)
+                                                        Country         (A13b) PIN code
+(A14) Aadhaar Number (12 digits)                                                                        (A15) Status
+20                             THE GAZETTE OF INDIA : EXTRAORDINARY                                      [PART II—SEC. 3(i)]
+
+                                                                                                  Individual       HUF
+                                                                                                       Firm (other than
+                                                                                                  LLP) 
+Details to be provided for communication purposes:
+(A16) Residential/Office Phone Number with STD code/                 (A17) Secondary Mobile       (A18a) Primary Email ID
+Primary Mobile number of the taxpayer                                       number                of the taxpayer
+                                                                                                  (A18b) Secondary Email
+                                                                                                  ID
+
+(A19) Nature of employment -  Central Govt.  State Govt.  Public Sector Undertaking                 Pensioners-CG 
+Pensioners-SG  Pensioners-PSU  Pensioners- Others  Others  Not Applicable (e.g. Family Pension etc.)
+(A20)(a) Filed u/s (Tick)              139(1)-On or before due date,  139(4)-After due date,  139(5)-Revised Return,
+[Please see instruction]-              119(2)(b)- After Condonation of delay
+(b) Or Filed in response to notice
+                                       139(9)  142(1)  148  153C
+u/s
+(A21)If revised/defective then enter Receipt
+No. and Date of filing of original return                                                                    /      /
+(DD/MM/YYYY)
+(A22) If filed in response to notice u/s 139(9) /142(1)/148/153C or order u/s 119(2)(b)- enter
+                                                                                                              /    /
+Unique Number/ Document Identification Number (DIN) & Date of such Notice or Order
+(A23) Have you filed form 10IEA within due date for any earlier assessment year for choosing old tax regime? (Tick)  Yes 
+No  Not Applicable
+
+      (A) If answer to A23 is yes, then
+        i. Furnish form 10IEA acknowledgement number and assessment year for which this form for choosing old tax regime
+           was filed.
+       ii. Have you filed ITR 3/4 in past and have re-entered new tax regime by filing form 10IEA for any assessment year
+           subsequent to assessment year in which first form 10IEA was filed for choosing old tax regime? (Tick)  Yes  No
+              (a) If answer to A23(A)(ii) is Yes, provide the acknowledgement number of second form 10IEA and assessment
+              year for which this form for choosing new tax regime was filed, and furnish ITR in new tax regime.
+              (b) If answer to A23(A)(ii) is No, have you furnished form 10IEA for re-entering in new tax regime in current
+              assessment year? (Tick)  Yes  No
+                   (b)(i) If yes, then provide the acknowledgement number of form 10IEA and furnish ITR in new tax regime,
+                   (b)(ii) If No, then furnish ITR in old tax regime.
+
+       (B) If answer to A23 is No:
+            Have you furnished form 10IEA within due date for current assessment year for choosing old tax regime? (Tick) 
+            Yes  No
+          i. If answer to A23(B) is Yes, provide the acknowledgement number of form 10IEA, and then furnish return in old tax
+              regime,
+          ii. If answer to A23(B) is No, furnish ITR in new tax regime.
+Note- The default regime under section 115BAC(1A) is the ‘new regime’. ‘Old regime’ can be chosen by opting out of new
+regime u/s. 115BAC(6) by filing form 10IEA, which should be exercised on or before the due date for furnishing the return of
+income u/s 139(1).
+(A24) Are you filing return of income under Seventh proviso to section 139(1) but otherwise not required to furnish
+return of income? (Not applicable in case of firm) - (Tick)  Yes  No
+If yes, please furnish following information as provided in e-filing utility
+[Note: To be filled only if a person is not required to furnish a return of income under section 139(1) but filing return of
+income due to fulfilling one or more conditions mentioned in the seventh proviso to section 139(1)]
+(i) Have you deposited amount or aggregate of amounts exceeding Rs. 1 Crore in one or
+    more current account during the previous year? (Yes/No)                                        Amount (Rs) (If Yes)
+
+(ii)      Have you incurred expenditure of an amount or aggregate of amount exceeding Rs.
+   2 lakhs for travel to a foreign country for yourself or for any other person? (Yes/ No) Amount (Rs) (If Yes)
+
+(iii)     Have you incurred expenditure of amount or aggregate of amount exceeding Rs. 1
+    lakh on consumption of electricity during the previous year? (Yes/No)                         Amount (Rs) (If Yes)
+
+(iv)       Are you required to file a return as per other conditions prescribed under clause
+   (iv) of seventh proviso to section 139(1) (If yes, please select the relevant condition from
+                                                                                                  (Tick)  Yes  No
+   the drop-down menu)
+
+(A25) Whether this return is being filed by a representative assessee? (Tick)         Yes               No
+If yes, please furnish following information -
+ (1) Name of the representative assessee
+ (2) Email-ID of the representative assessee
+[भाग II—खण्ड 3(i)]                                                   भारत का रािपत्र : असाधारण                                                       21
+          (3)          Contact Number of the representative assessee
+
+
+
+PART B GROSS TOTAL INCOME                                                                                                     Whole- Rupee () only
+   Income from Business & Profession (NOTE-Enter value from E8
+B1
+   of Schedule BP)                                                                                       B1
+B2 i Gross Salary (ia + ib + ic)                                                                           i
+        a Salary as per section 17(1)                                                                     ia
+       b Value of perquisites as per section 17(2)                                                       ib
+        c Profit in lieu of salary as per section 17(3)                                                  ic
+      Less allowances to the extent exempt u/s 10 (drop down to be
+      provided in e-filing utility)
+SALARY /
+PENSION
+
+
+
+
+   ii                                                                                                    ii
+      (Ensure that it is included in salary income u/s 17(1)/17(2)/17(3) )
+
+                 ii Net Salary (i – ii)                                                                  iii
+                 iv Deductions u/s 16 (iva + ivb + ivc)
+                     a Standard deduction u/s 16(ia)                                                  Iva
+                     b Entertainment allowance u/s 16(ii)                                             ivb
+                     c Professional tax u/s 16(iii)                                                   ivc
+                 v Income chargeable under the head ‘Salaries’ (iii – iv)                                B2
+
+   B3 Details of Income from House Property (Drop down to be provided indicating ownership of property)
+                 Address of property 1                     Town/ City                            State         Country Pin Code/ ZIP Code
+
+
+                 Is the property co-owned? o Yes o No             (if “YES” please enter following details)
+                 Your percentage of share in the property (%)
+                 Name of Co-owner(s)                        PAN/Aadhaar No. of Co-owner (s)                     Percentage Share in Property
+                 I
+                 II
+                 [Tick the      Name(s) of        PAN/Aadhaar No. of Tenant(s) (Please see                      PAN/TAN/Aadhaar No. of Tenant(s) (if
+                 applicable     Tenant(s) (if let note)                                                         TDS credit is claimed)
+                 option]        out)
+HOUSE PROPERTY
+
+
+
+
+                  Let out       I
+                  Self-
+                                 II
+                 occupied
+                  Deemed let
+                 out
+                  a Gross rent received/ receivable/ lettable value during the year                                  1a
+                     b The amount of rent which cannot be realized                             1b
+                     c Tax paid to local authorities                                           1c
+                     d Total (1b + 1c)                                                    1d
+                     e Annual Value (1a – 1d) (nil, if self -occupied etc. as per section 23(2) of the Act) 1e
+                     f Annual value of the property owned (own percentage share x 1e)                                1f
+                     g 30% of Annual Value                                                     1g
+                     h Interest payable on borrowed capital (Details are to be filled 1h
+                       in the drop down to be provided in e-filing utility)
+                     i Total (1g+ 1h)                                                                                1i
+                     j Arrears/Unrealised rent received during the year less 30%                                     1j
+                     k Income from house property 1 (1f – 1i + 1j)                                                   1k
+                       Income chargeable under the head ‘House Property’ ( Ʃ1k )                                     B3
+                       (If loss, put the figure in negative)
+                       Note:-Maximum loss from house property that can be set-off is INR 2,00,000. To avail
+                       the benefit of carry forward and set of loss, please use ITR -3/5.
+                       (fill up details separately for each property for up to 2 properties)
+NOTE ► Furnishing of PAN/ Aadhaar No. of tenant is mandatory, if tax is deducted under
+                          section 194-IB.
+                          Furnishing of TAN of tenant is mandatory, if tax is deducted under section 194-I.
+   B4 Income from Other Sources drop down like interest from saving account, deposit etc. B4
+                 to be provided in e-filing utility specifying nature of income and in case of dividend
+                 and, please mention quarterly breakup for allowing applicable relief from section 234C
+22                                 THE GAZETTE OF INDIA : EXTRAORDINARY                                                         [PART II—SEC. 3(i)]
+
+     NOTE- Fill “Sch TDS2” if applicable.
+     Less: Deduction u/s 57(iia) (in case of family pension only)
+B5 Gross Total Income (B1+B2+B3+B4+D20(a)(iii))                                                           B5
+   To avail the benefit of carry forward and set of loss, please use ITR -3/5.
+
+
+
+
+PART C–DEDUCTIONS AND TAXABLE TOTAL INCOME
+       C1         80C         (Details are to       C2       80CCC        (Details are to      C3    80CCD (1)   (Details are to be
+                              be filled in the                            be filled in the                       filled in the drop
+                              drop down to be                             drop down to be                        down to be provided
+                              provided in e-                              provided in e-                         in e-filing utility)
+                              filing utility)                             filing utility)
+       C4     80CCD(1B)          (Details are       C5      80CCD(2)         (Details are      C6      80D          (Details to be
+                                 to be filled in                             to be filled in                        filled in drop
+                                 the       drop                              the       drop                         down         to      be
+                                 down to be                                  down to be                             provided in e-
+                                 provided in                                 provided in                            filing utility)
+                                 e-filing to
+                                 (Details                                    e-filing to
+                                                                             (Details                                (Details are to be
+       C7        80DD            utility)
+                                                    C8       80DDB           utility)
+                                                                                               C9      80E
+                                 be   filled in                              be   filled in                           filled in the drop
+                                 drop down                                   drop down                                    down to be
+                                 to          be                              to          be                             provided in e-
+                                 provided in                                 provided in                                 filing utility)
+      C10         80EE           e-filing are to
+                              (Details             C11       80EEA           e-filing are to
+                                                                          (Details             C12    80EEB      (Details are to be
+                              beutility)
+                                   filled in the                          beutility)
+                                                                               filled in the                     filled in the drop
+                              drop down to be                             drop down to be                        down to be provided
+                              provided in e-                              provided in e-                         in e-filing utility)
+                              filing utility)                             filing utility)
+
+
+      C13         80G         (Details to be       C14        80GG        (Details are to      C15    80GGC      (Details are to be
+                              filled in drop                              be filled in the                       filled in the drop
+                              down to be                                  drop down to be                        down to be provided
+                              provided in e-                              provided in e-                         in e-filing utility)
+                              filing utility)                             filing utility)
+
+
+
+      C16        80TTA                             C17        80TTB                            C18     80U         (Details to be
+                                                                                                                   filled in the drop
+                                                                                                                   down        to  be
+                                                                                                                   provided in e-
+                                                                                                                   filing utility)
+
+     C18a       80CCH                              C18b Any Other (Details are to
+                                                        deduction as be     filled in the
+                                                                       drop down to be
+                                                        per the e- provided in e-
+                                                        filing utility filing utility)
+
+
+
+      C19 Total deductions (Add items C1 to C18b)                                                                                             C19
+      C20 Taxable Total Income (B5 - C19 )                                                                                                    C20
+Note: The Total Income Field includes LTCG u/s 112A. However, no tax would be payable on the said income.
+
+
+PART D – TAX COMPUTATIONS AND TAX STATUS
+  D1  Tax payable on total income (C20)                                                     D1
+  D2  Rebate on 87A                                                                         D2
+  D3  Tax payable after Rebate (D1-D2)                                                      D3
+  D4  Health and Education Cess @ 4% on (D3)                                                D4
+   D5 Total Tax, and Cess ( D3+D4)                                                          D5
+  D6  Relief u/s 89 (Please ensure to submit Form 10E to claim this relief)                 D6
+  D7  Balance Tax after Relief (D5 – D6)                                                    D7
+  D8  Total Interest u/s 234A                                                               D8
+  D9  Total Interest u/s 234B                                                               D9
+  D10 Total Interest u/s 234C                                                              D10
+ D11 Fee u/s 234F                                                                          D11
+ D11a Fee for furnishing revised return of income (section 234-I)                          D11a
+ D12 Total Tax, Fee and Interest (D7+ D8 + D9 + D10 + D11+D11a)                            D12
+ D13 Total Advance Tax Paid                                                                D13
+ D14 Total Self-Assessment Tax Paid                                                        D14
+ D15 Total TDS Claimed (total of column 4 of Schedule-TDS1 and, column 6 of Schedule-TDS2) D15
+ D16 Total TCS Collected (total of column (5) of Schedule-TCS)                             D16
+ D17 Total Taxes Paid (D13+ D14 + D15 + D16)                                               D17
+[भाग II—खण्ड 3(i)]                                             भारत का रािपत्र : असाधारण                                                             23
+          D18      Amount payable (D12 – D17, If D12 > D17)                                                                      D18
+          D19      Refund (D17 – D12, If D17 > D12)                                                                              D19
+          D20      Exempt income only for reporting purposes (If agricultural income is more than Rs.                            D20
+                   5,000/-, use ITR 3/5) and Income on which no tax is payable
+                   (Drop down to be provided in e-filing utility mentioning nature of exempt income, relevant clause and
+                   section)
+
+
+
+     D20(a) Long Term capital gains under section 112A not chargeable to Income-tax
+
+                     i.    Total sale consideration
+                    ii.    Total cost of acquisition
+                   iii.    Long term capital gains as per section 112A
+
+
+
+               D21 Details of all Bank Accounts held in India at any time during the previous year (excluding dormant accounts)
+BANK ACCOUNT
+
+
+
+
+                     Sl.    IFS Code of the Bank           Name of the Bank Account Number Type of bank account Select Account for
+                                                                                           (Dropdown to be provided by Refund Credit
+                                                                                                             E-filing utility)
+
+
+
+
+                      i
+
+                     ii
+
+               1. All bank accounts held at any time are to be reported, except dormant A/c.
+               2. Minimum one account should be selected for refund credit.
+               3. In case multiple accounts are selected, refund will be credited to one of the validated accounts decided by CPC after processing the
+               return.
+
+
+
+
+    SCHEDULE BP – DETAILS OF INCOME FROM BUSINESS OR PROFESSION
+    COMPUTATION OF PRESUMPTIVE BUSINESS INCOME UNDER SECTION 44AD
+    S.             Name of Business                                Business code                                                       Description
+    No.
+    (i)
+      E1 Gross Turnover or Gross Receipts (E1 limited to Rs.2 Crores, however if [E1b+ E1c] is
+         less than or equal to 5% of E1 then the limit under E1 is extended to Rs.3 Crores.)
+         a Through a/c payee cheque or a/c payee bank draft or bank electronic clearing system                                     E1a
+              received or prescribed electronic modes received before specified date
+         b Receipts in Cash                                                                                                        E1b
+         c Any mode other than a and b                                                                                             E1c
+      E2 Presumptive Income under section 44AD
+         a 6% of E1a or the amount claimed to have been earned, whichever is higher                                                E2a
+         b 8% of (E1b+E1c) or the amount claimed to have been earned, whichever is higher                                          E2b
+         c Total (a + b)                                                                                                           E2c
+                   NOTE—If Income is less than the above percentage of Gross Receipts, it is mandatory to have a tax
+                   audit under 44AB & other ITR as applicable has to be filed.
+
+
+
+
+    COMPUTATION OF PRESUMPTIVE INCOME FROM PROFESSIONS UNDER SECTION 44ADA
+    S.              Name of Business/Profession                          Business code              Description
+    No.
+     (i)
+      E3 Gross Receipts (E3 limited to Rs.50 Lakhs, however if [E3b + E3c] is less than or equal E3
+         to 5% of E3 then limit under E3 is extended to Rs.75 Lakhs.)
+         a    Through a/c payee cheque or a/c payee bank draft or bank electronic clearing       E3a
+              system received or prescribed electronic modes received before specified date
+         b    Receipts in Cash                                                                   E3b
+         c    Any mode other than a and b                                                        E3c
+24                                 THE GAZETTE OF INDIA : EXTRAORDINARY                                               [PART II—SEC. 3(i)]
+
+     E4   Presumptive Income under section 44ADA (50% of E3) or the amount claimed to have been                        E4
+          earned, whichever is higher
+          NOTE—If Income is less than 50% of Gross Receipts, it is mandatory to have a tax audit under 44AB
+          & other ITR as applicable has to be filed
+
+COMPUTATION OF PRESUMPTIVE INCOME FROM GOODS CARRIAGES UNDER SECTION 44AE
+S.               Name of Business               Business code          Description
+No.
+ (i)
+
+           Registration         Whether         Tonnage capacity        Number of months for                Presumptive income u/s 44AE
+           No. of goods          owned/         of goods carriage       which goods carriage was            for the goods carriage
+            carriage          leased/ hired          (in MT)            owned/ leased/hired by              (Computed @ Rs.1000 per ton
+                                                                        assessee                            per month in case tonnage
+                                                                                                            exceeds 12MT, or else @
+                                                                                                            Rs.7500 per month) or the
+                                                                                                            amount claimed to have been
+                                                                                                            actually earned, whichever is
+                                                                                                            higher
+ (i)        (1)            (2)                (3)                       (4)                                               (5)
+ (a)
+ (b)
+Add row options as necessary (At any time during the year the number of vehicles should not exceed 10 vehicles)
+                                                           `
+ E5   Presumptive Income from Goods Carriage under section 44AE [total of column (5)]              E5
+      NOTE—If the profits are lower than prescribed under section 44AE or the number of Vehicles
+          owned at any time exceed 10 then other ITR, as applicable, has to be filed
+ E6       Salary and interest paid to the partners                                                                    E6
+          NOTE – This is to be filled up only by firms
+ E7       Presumptive Income u/s 44AE (E5-E6)                                                                         E7
+ E8       Income chargeable under the head ‘Business or Profession’ (E2c+E4+E7 )                                      E8
+
+INFORMATION REGARDING TURNOVER/GROSS RECEIPT REPORTED FOR GST
+Note – Please furnish the information below for each GSTIN No. separately
+
+ E9       GSTIN No(s).                                                                                                E9
+ E10      Annual value of outward supplies as per the GST returns filed                                               E10
+
+FINANCIAL PARTICULARS OF THE BUSINESS
+Note—For E11 to E25 furnish the information as on 31 st day of March, 2026
+ E11  Partners/ Members own capital                                                                                   E11
+ E12  Secured loans                                                                                                   E12
+ E13  Unsecured loans                                                                                                 E13
+ E14  Advances                                                                                                        E14
+ E15 Sundry creditors                                                                                                 E15
+ E16      Other liabilities                                                                                           E16
+ E17      Total capital and liabilities (E11+E12+E13+E14+E15+E16)                                                     E17
+ E18      Fixed assets                                                                                                E18
+ E18a     Investments                                                                                                 E18a
+ E19      Inventories                                                                                                 E19
+ E20      Sundry debtors                                                                                              E20
+ E21      Balance with banks                                                                                          E21
+ E22      Cash-in-hand                                                                                                E22
+ E23      Loans and advances                                                                                          E23
+ E24      Other assets                                                                                                E24
+ E25      Total assets (E18+E18a+E19+E20+E21+E22+E23+E24)                                                             E25
+NOTE ► Please refer to instructions for filling out this schedule (E15, E19, E20, E21, E22 are mandatory and others
+if available)
+[भाग II—खण्ड 3(i)]                                          भारत का रािपत्र : असाधारण                                                              25
+SCHEDULE IT DETAILS OF ADVANCE TAX AND SELF ASSESSMENT TAX PAYMENTS
+                     BSR Code                         Date of Deposit             Challan No.                           Tax paid
+                                                     (DD/MM/YYYY)
+                      Col (1)                            Col (2)                     Col (3)                            Col (4)
+R1
+R2
+R3
+Enter the totals of Advance tax and Self-Assessment tax in D13 & D14
+
+
+ Schedule TCS Details of Tax Collected at Source [As per Form 27D issued by the Collector(s)]
+Sl        Tax Collection              Name of the Collector             Details of amount paid as   Tax Collected        Amount out of (4) being
+No.     Account Number of                                               mentioned in Form 26AS                                 claimed
+           the Collector
+(1)           Col (1)                           Col (2)                          Col (3)                Col (4)                    Col (5)
+ I
+
+ Ii
+ NOTE ► Please enter total of column (5) of Schedule-TCS in D16
+
+
+SCHEDULE TDS-1 DETAILS OF TAX DEDUCTED AT SOURCE FROM SALARY
+[As per Form 16 issued by Employer(s)]
+                    TAN            Name of the Employer                  Income under Salary                        Tax deducted
+                   Col (1)                 Col (2)                              Col (3)                                 Col (4)
+       S1
+       S2
+       S3
+NOTE►               Enter the total of column 4 of Schedule-TDS1 and column 6 of Schedule-TDS2 in D15
+
+
+
+
+SCHEDULE TDS-2 DETAILS OF TAX DEDUCTED AT SOURCE ON INCOME OTHER THAN
+SALARY
+[As per Form 16 A issued or Form 16C or Form 16D furnished by Deductor(s)]
+Sl.      TAN of Section                                          TDS of the      TDS credit being claimed Corresponding Receipt/ TDS credit
+No.        the    under          Unclaimed TDS brought          current Fin.          this Year (only if    withdrawals offered being carried
+        Deductor/ which               forward (b/f)                Year          corresponding receipt is                         forward
+          PAN/ TDS                                                               being offered for tax this
+        Aadhaar is                                                              year, not applicable if TDS
+         No. of deducted                                                           is deducted u/s 194N)
+         Tenant
+                                 Fin. Year in       TDS b/f        TDS                TDS Claimed            Gross          Head of
+                                    which                        Deducted                                   Amount          Income
+                                  deducted
+ (1)        (2a)        (2b)          (3)             (4)           (5)                     (6)                   (7)         (8)            (9)
+
+  i
+ ii
+ NOTE ►Enter the total of column 6 of Schedule TDS2 and column 4 of Schedule-TDS1 in D15
+
+                                                                VERIFICATION
+
+
+I, ____________________________________________son/ daughter of __________________________________
+solemnly declare that to the best of my knowledge and belief, the information given in the return is correct and complete and
+is in accordance with the provisions of the Income-tax Act, 1961. I further declare that I am making returns in my capacity as
+___________ (drop down to be provided in e-filing utility) and I am also competent to make this return and verify it. I am holding
+permanent account number                     . (Please see instruction)
+Place:                                                                                    Signature here ➔
+Date :
+If the return has been prepared by a Tax Return Preparer (TRP) give further details as below:
+26                            THE GAZETTE OF INDIA : EXTRAORDINARY                                  [PART II—SEC. 3(i)]
+
+TRP PIN (10 Digit)       Name of TRP                        Counter Signature of TRP
+
+
+Amount to be paid to TRP.’.
+
+
+                                                                             [No. 45 /2026/F. No. 370142/5/2026-TPL]
+
+                                                          PRADEEP SHARMA, Dy. Secy., Tax Policy and Legislation
+
+
+Note:- The Income-tax Rules, 1962 rules were published in the Gazette of India, Extraordinary, Par II, Section
+3, Sub-section (ii) vide notification number S.O. 969 (E), dated the 26th March, 1962 and last amended vide
+notification GSR 158(E), dated the 05th March, 2026.
+
+
+
+
+            Uploaded by Dte. of Printing at Government of India Press, Ring Road, Mayapuri, New Delhi-110064
+                              and Published by the Controller of Publications, Delhi-110054.
+

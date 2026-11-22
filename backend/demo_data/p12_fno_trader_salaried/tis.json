@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "GNTPM6511O",
+  "name": "Dev Malhotra",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1800000,
+      "processed_value": 1800000,
+      "derived_value": 1800000
+    },
+    {
+      "category": "Business receipts (GST / TDS 194J)",
+      "information_value": 2600000,
+      "processed_value": 2600000,
+      "derived_value": 2600000
+    }
+  ]
+}

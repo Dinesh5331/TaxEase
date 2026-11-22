@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "ONCPI7533S",
+  "name": "Rohit Iyer",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1200000,
+      "processed_value": 1200000,
+      "derived_value": 1200000
+    },
+    {
+      "category": "Interest from savings bank",
+      "information_value": 9000,
+      "processed_value": 9000,
+      "derived_value": 9000
+    },
+    {
+      "category": "Sale of securities and units of mutual fund",
+      "information_value": 378000,
+      "processed_value": 378000,
+      "derived_value": 378000
+    },
+    {
+      "category": "Purchase of units of mutual fund",
+      "information_value": 180000,
+      "processed_value": 180000,
+      "derived_value": 180000
+    }
+  ]
+}

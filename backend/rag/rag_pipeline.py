@@ -5,6 +5,20 @@ from rag.query_classifier import classify_query
 from rag.reranker import rerank
 from rag.llm import generate
 from rag.loader import normalize_document_key
+from rag.citations import build_citations
+from rag.sections import choose_act, filter_by_act
+
+
+_retriever_cache = {}
+
+
+def _get_retriever(docs, index):
+    """BM25 is built over every chunk; build it once per loaded corpus, not per request."""
+    key = id(docs)
+    if key not in _retriever_cache:
+        _retriever_cache.clear()
+        _retriever_cache[key] = HybridRetriever(docs, index)
+    return _retriever_cache[key]
 
 
 MIN_HYBRID_SCORE = 0.2
@@ -233,7 +247,7 @@ def _build_prompt(query, context, requested_forms, matched_files, query_type, su
 # Main RAG entry point
 # ---------------------------------------------------------------------------
 
-def run_rag(model, index, docs, query, debug=False):
+def run_rag_cited(model, index, docs, query, debug=False):
     """
     Unified RAG pipeline:
       1. Classify query and detect sub-focus.
@@ -253,7 +267,7 @@ def run_rag(model, index, docs, query, debug=False):
         eligibility_items = _get_eligibility_items(docs, requested_forms)
 
     # --- Step 2: Hybrid retrieval for supporting context ---
-    retriever       = HybridRetriever(docs, index)
+    retriever       = _get_retriever(docs, index)
     retrieved_items = retriever.search(query, k=40)
 
     # --- Step 3: Form filter on hybrid results ---
@@ -264,12 +278,14 @@ def run_rag(model, index, docs, query, debug=False):
         ]
         retrieved_items = form_items or retrieved_items
 
-    # --- Step 4: For eligibility queries, prefer blank form over validation-rules guidelines ---
-    # The guidelines are "Validation Rules" PDFs full of TDS codes — not useful for eligibility.
+    # --- Step 3b: answer from the right Act (1961 for AY 2026-27 filings, 2025 only when asked) ---
+    retrieved_items = filter_by_act(retrieved_items, choose_act(query))
+
+    # --- Step 4: for eligibility queries drop validation-rule guideline chunks (TDS codes, not eligibility) ---
     if query_type == "itr_selection":
-        form_only = [i for i in retrieved_items
-                     if i["doc"].metadata.get("source") == "itr_form"]
-        retrieved_items = form_only or retrieved_items
+        non_guideline = [i for i in retrieved_items
+                         if i["doc"].metadata.get("source") != "guideline"]
+        retrieved_items = non_guideline or retrieved_items
 
     # --- Step 5: Merge (eligibility guaranteed first) + deduplicate ---
     merged = _deduplicate(eligibility_items + retrieved_items)
@@ -301,10 +317,15 @@ def run_rag(model, index, docs, query, debug=False):
                   f"p{m.get('page')} | rerank={item.get('rerank_score', 1.0):.3f}")
 
     if not strong:
-        return "Not found in documents. Please consult a tax professional."
+        return "Not found in documents. Please consult a tax professional.", []
 
     context, matched_files = _build_context(strong)
     prompt = _build_prompt(
         query, context, requested_forms, matched_files, query_type, sub_focus=sub_focus
     )
-    return generate(model, prompt)
+    return generate(model, prompt), build_citations(strong)
+
+
+def run_rag(model, index, docs, query, debug=False):
+    """Answer text only (kept for callers that do not need citations)."""
+    return run_rag_cited(model, index, docs, query, debug=debug)[0]

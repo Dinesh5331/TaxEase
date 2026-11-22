@@ -1,0 +1,154 @@
+[भाग II—खण्ड 3(i)]                                      भारत का रािपत्र : असाधारण                                                           5
+
+
+                                           INDIAN INCOME TAX UPDATED RETURN
+ FORM
+
+                                 [For persons to update income/reduce loss within forty-eight months from the end of
+         ITR - U                                            the relevant assessment year]
+                                                                       (Refer instructions for eligibility)
+                                                              (Please see rule 12AC of the Income-tax Rules, 1962)
+
+
+
+PART A GENERAL INFORMATION – 139(8A)
+(A1)                      (A2) Name         (A3) Aadhaar Number (12 digits)
+PAN
+(A4) Assessment Year  (A5) whether return previously     (A6) If yes,
+                      filed for this assessment year?    Whether filed u/s  139(1)  Others
+
+                                    Yes  No
+
+
+(A7) If applicable, enter form     (Please select ITR      Ack no
+filed, Acknowledgement no.         type from               and date
+or Receipt No. and Date of         dropdown)               of filing                                                               /    /
+filing original return
+(DD/MM/YYYY)
+(A8) Are you eligible for filing an updated return as per the conditions laid out in first, second, third and fourth provisos to section
+139(8A)? Yes No
+(A9) Please choose the ITR form for updating your income/losses (ITRs 1-7 to be selected from drop-down and filled as per the details
+made available by e-filing utility – see instruction)
+(A10) Reasons for updating your income:
+           Return previously not filed
+           Income not reported correctly
+           Loss not reported correctly (In case of reduction of loss) Wrong heads of income chosen
+           Reduction of carried forward loss
+           Reduction of unabsorbed depreciation
+           Reduction of tax credit u/s 115JB/115JC
+           Wrong rate of tax
+            Return in response to notice u/s 148
+           If filed, in response to a notice u/s 148 enter Document Identification Number (DIN) and date of such notice,
+
+                 Date of such Notice(dd/mm/yyyy)
+                 Document Identification Number (DIN)
+
+           Others
+(A11) Are you filing the updated return during the period upto 12 months from the end of the relevant assessment year between 12 to 24
+months from the end of the relevant assessment year between 24 to 36 months from the end of the relevant assessment year
+ between 36 to 48 months from the end of the relevant assessment year
+(A12) (a) Are you filing the updated return to reduce carried forward loss or unabsorbed depreciation or tax credit? Yes No
+
+(b) If yes, please specify the assessment years where carried forward loss or unabsorbed depreciation or tax credit is being affected
+because of this updated return. (Please select from drop down menu)
+
+ Whether Original / revised return has been filed for the AY in (b) above Yes No
+
+ Whether updated return has been filed for the AY in (b) above Yes No
+
+
+
+ RT B – ATI COMPUTATION OF TOTAL UPDATED INCOME AND TAX PAYABLE
+    1.     A     Head of income under which additional income is being returned / loss is being reduced as per         Amount
+                 Updated Return
+                 Head of income (If yes, please specify additional income/reduction in loss)
+           a     Income from Salary
+           b     Income from House Property
+           c     Income from Business or Profession
+           d     Income from Capital gains
+           e     Income from other Sources
+           f     Total additional income/reduction in loss (a+b+c+d+e)
+           B     Total income/loss as per last valid return (only in cases where the Income Tax Return has
+                 previously been filed)
+    2.           Total income/loss as per Part B-TI
+    3.           Amount payable, if any (To be taken from “Amount payable” of part BTTI of the updated
+                 return
+    4.           Amount refundable, if any (To be taken from “Refund” of part B-TTI of the updated return
+    5.           Amount payable on the basis of last valid return (only in applicable cases)
+6                                                              THE GAZETTE OF INDIA : EXTRAORDINARY                                               [PART II—SEC. 3(i)]
+
+               6.                            (i) Refund claimed as per last valid return, if any
+                                             (ii) Total Refund issued as per last valid return, if any (including interest u/s 244A received)
+               7.                            Fee for default in furnishing return of income u/s 234F
+               8.                            Regular Assessment Tax, if any (in applicable cases) [Please mention the tax paid if any which is
+                                             over and above the tax payable declared in sl.no.5]
+               9.                            Aggregate liability on additional income,
+                                             (i) in case refund has been issued [3 + 6ii- (5 + 8 + 4)]
+                                             (ii) in case refund has not been issued [3 + 6i – (5+8 + 4 )]
+            10.                              Additional income-tax liability on updated income [25% or 50% or 60% or 70% of (9-7)]
+                                             or
+                                             Additional income-tax liability on updated income where return is filed in response to notice
+                                             issued u/s 148 [35% or 60% or 70% or 80% of (9-7)]
+
+            11.                              Net amount payable (9+10)
+            12.                              Tax paid u/s 140B
+            13.                              Tax due (11-12)
+    14.                        TAX PAYMENTS (ONLY as per Updated Return)
+      A                        Details of payments of tax on updated return u/s 140B
+                               Sl No                 BSR Code               Date of Deposit (DD/MM/YYYY)              Serial Number of             Amount (Rs)
+    TAX PAID U/S 140B
+
+
+
+
+                                                                                                                           Challan
+                               (1)                       (2)                                (3)                              (4)                       (5)
+                                  i
+                                  ii
+                                 iii
+                                 iv
+                               NOTE ►              Enter the totals of tax paid u/s 140B at Sl. No.11 of Part B-ATI
+
+
+                                 TAX PAYMENTS
+                                 Details of payments of Advance Tax / Self-Assessment Tax / Regular Assessment Tax, credit for which has not been claimed in
+B
+                                 the earlier return (credit for the same is not to be allowed again under section 140B(2) )
+                                 Sl              BSR Code                Date of Deposit (DD/MM/YYYY)          Serial Number of        Amount (Rs)
+    ADVANCE/SELF ASSESSMENT/
+    REGULAR ASSESSMENT TAX
+
+
+
+
+                                 No                                                                                 Challan
+                                 (1)                  (2)                                 (3)                         (4)                    (5)
+                                      i
+                                     ii
+                                     iii
+                                     iv
+
+                                 NOTE ►            Credit for above is not to be allowed again under section 140B(2)
+
+
+
+
+ 15. Relief u/s 89 which is not claimed in earlier return [relief for the same is not to be allowed under section                                Rs.
+ 140B(2)]
+                                                               VERIFICATION
+ I,                      son/ daughter of solemnly declare that to the best of my knowledge and belief, the information given in the return is correct
+ and complete and is in accordance with the provisions of the Income-tax Act, 1961. I further declare that I am making this return in my capacity as
+ ___________(drop down to be provided in e-filing utility) and I am also competent to make this return and verify it. I am holding permanent account
+ number.(Please see instruction).
+
+Date:                                                                                             Signature:”
+
+
+                                                                                                        [Notification No. 52/2026/F.No. 370142/13/2026-TPL]
+                                                                                                  PRADEEP SHARMA, Dy. Secy., Tax Policy and Legislation
+Note.- The Income-tax Rules, 1962 rules were published in the Gazette of India, Extraordinary, Part II, Section 3, sub-
+section(ii) vide number S.O. 969 (E), dated the 26th March, 1962 and was last amended vide notification
+GSR 232 (E), dated the 30th March, 2026
+                                           Uploaded by Dte. of Printing at Government of India Press, Ring Road, Mayapuri, New Delhi-110064
+                                                             and Published by the Controller of Publications, Delhi-110054.
+

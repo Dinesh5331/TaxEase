@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Taxpayer Information Summary (simplified model)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "pan": "CMJPS4067L",
+  "name": "Rahul Singhania",
+  "summary": [
+    {
+      "category": "Salary",
+      "information_value": 1300000,
+      "processed_value": 1300000,
+      "derived_value": 1300000
+    },
+    {
+      "category": "Virtual digital asset transfer",
+      "information_value": 420000,
+      "processed_value": 420000,
+      "derived_value": 420000
+    }
+  ]
+}

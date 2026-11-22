@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "synthetic": true,
+    "document": "Annual Information Statement (simplified model of the 5 portal tabs)",
+    "financial_year": "2025-26",
+    "assessment_year": "2026-27"
+  },
+  "part_a": {
+    "pan": "UWOPN8690W",
+    "aadhaar_masked": "XXXXXXXX8846",
+    "name": "Vikram Nair",
+    "date_of_birth": "1990-06-15",
+    "mobile": "XXXXXX7585",
+    "email": "sample@example.invalid"
+  },
+  "part_b": {
+    "tds_tcs_information": [
+      {
+        "information_code": "TDS-192",
+        "description": "Salary",
+        "source": "Orchid Labs Pvt Ltd",
+        "tan": "RMVJ81846Z",
+        "amount_paid": 2400000,
+        "tax_deducted": 292500,
+        "status": "Active",
+        "reported_value": 2400000,
+        "modified_value": 2400000
+      }
+    ],
+    "sft_information": [],
+    "payment_of_taxes": [],
+    "demand_and_refund": [],
+    "other_information": [
+      {
+        "information_code": "OTH-RENT",
+        "description": "Rent received (194-I / 194-IB)",
+        "amount": 540000,
+        "status": "Active",
+        "reported_value": 540000,
+        "modified_value": 540000
+      }
+    ]
+  }
+}

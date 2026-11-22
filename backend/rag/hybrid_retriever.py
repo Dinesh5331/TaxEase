@@ -2,6 +2,7 @@ import re
 
 from rank_bm25 import BM25Okapi
 
+from rag.fusion import rrf_fuse
 from rag.vector_store import faiss_search
 
 
@@ -80,10 +81,13 @@ class HybridRetriever:
             for result in faiss_results
         }
 
-        normalized_bm25 = self._normalize_scores(bm25_score_map)
-        normalized_faiss = self._normalize_scores(faiss_score_map)
+        # Reciprocal rank fusion: ranks, not raw scores, so BM25 and cosine need no common scale.
+        fused = rrf_fuse([
+            [i for i in bm25_top_idx if bm25_score_map[i] > 0],
+            [self.doc_id_map[id(r["doc"])] for r in faiss_results],
+        ])
 
-        candidate_indices = set(bm25_score_map) | set(faiss_score_map)
+        candidate_indices = set(fused)
         combined = []
 
         for idx in candidate_indices:
@@ -91,10 +95,7 @@ class HybridRetriever:
                 "doc": self.docs[idx],
                 "bm25_score": bm25_score_map.get(idx, 0.0),
                 "faiss_score": faiss_score_map.get(idx, 0.0),
-                "hybrid_score": (
-                    0.45 * normalized_bm25.get(idx, 0.0) +
-                    0.55 * normalized_faiss.get(idx, 0.0)
-                )
+                "hybrid_score": fused[idx],
             })
 
         combined.sort(key=lambda item: item["hybrid_score"], reverse=True)

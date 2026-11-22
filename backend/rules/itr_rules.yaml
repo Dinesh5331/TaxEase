@@ -1,0 +1,219 @@
+# ITR selection rules for AY 2026-27 (FY 2025-26, filed under Income-tax Act 1961 / Rules 1962).
+# Source of truth for the rules engine (Phase 3). Evidence text: rules/source/*.txt
+# verified: form  = read in the AY 2026-27 form header/body (rules/source)
+#           web   = from web sources (mostly secondary: taxguru, cleartax, news); CONFIRM at incometax.gov.in
+#           know  = from prior-year instructions / statute; CONFIRM against official ITR instructions
+meta:
+  assessment_year: "2026-27"
+  forms_notified: "CBDT Income-tax (Fourth Amendment) Rules, 2026, G.S.R. 228(E), 30 Mar 2026"
+  note: >
+    Income-tax Act 2025 applies from tax year 2026-27 (returns filed in 2027). Returns for FY 2025-26
+    are still filed under the 1961 Act. The chat corpus must carry act_version + tax_year metadata.
+
+# ---------------------------------------------------------------- decision order (first match wins)
+decision_order:
+  1_entity:
+    company_not_claiming_s11: ITR-6
+    persons_required_under_139_4A_4B_4C_4D: ITR-7          # charitable/religious trusts, political parties, 10(23C)/10(21)/10(22B)/10(24) bodies, colleges/universities  [web]
+    firm_llp_aop_boi_ajp_coop_local_authority_estate_business_trust_investment_fund: ITR-5   # 139(4E) business trust and 139(4F) investment fund are ITR-5, NOT ITR-7  [web]
+    # a resident firm (not LLP) with total income <= 50L and only 44AD/44ADA/44AE income may use ITR-4 instead  [form]
+    individual_or_huf: go_to_2
+  2_business_income:
+    # any non-presumptive business/profession income, partner remuneration/interest, or ITR-4 ineligible presumptive
+    individual_or_huf_with_business_or_profession_income: ITR-3   # [form: ITR-3 'for individuals and HUFs having income from profits and gains of business or profession']
+    partner_in_firm_receiving_remuneration_or_interest: ITR-3     # [form: ITR-3 Part A (k) partner question; know]
+    presumptive_only_and_itr4_eligible: ITR-4                     # ITR-3 is also acceptable; ITR-4 is optional
+  3_no_business_income:
+    itr1_eligible: ITR-1
+    otherwise: ITR-2
+  note: >
+    ITR-V (acknowledgement), ITR-U (updated return, s.139(8A)), ITR-B (block assessment) are not selection outcomes.
+    ITR-U is used instead of the normal form only for an updated return, within the allowed window.
+
+# ---------------------------------------------------------------- per-form eligibility
+ITR-1:
+  name: SAHAJ
+  applies_to: individual only                       # [form] HUF cannot use ITR-1
+  all_of:                                           # every condition must hold
+    - {id: i1_resident,   rule: "residential_status == ROR (resident and ordinarily resident)", verified: form}
+    - {id: i1_income_cap, rule: "total_income <= 5000000", verified: form}
+    - {id: i1_sources,    rule: "income only from: salary/pension, <=2 house properties, other sources (interest, family pension, dividends), LTCG s.112A <= 125000, agricultural income <= 5000", verified: form}
+    - {id: i1_cg,         rule: "capital gains: only LTCG u/s 112A and total <= 125000; any STCG or other LTCG => not ITR-1", verified: form+know}
+    - {id: i1_director,   rule: "not a director of any company in the year", verified: form}
+    - {id: i1_unlisted,   rule: "no unlisted equity shares held at any time in the year", verified: form}
+    - {id: i1_194N,       rule: "no TDS u/s 194N (large cash withdrawal)", verified: form}
+    - {id: i1_esop,       rule: "no tax deferred on ESOP of eligible start-up", verified: form}
+    - {id: i1_foreign,    rule: "no asset (incl. financial interest/signing authority) outside India, no foreign income", verified: form}
+    - {id: i1_losses,     rule: "no loss to carry forward or set off beyond HP loss of 200000 (form: use ITR-2 for carry-forward)", verified: form}
+    - {id: i1_special,    rule: "no lottery/racehorse/gambling winnings; no s.115BBDA dividend (>10 lakh); no s.5A Portuguese Civil Code apportionment", verified: know}
+  not_a_disqualifier:
+    - "age 60+/80+ taxpayers can use ITR-1"
+    - "senior or super senior citizen status"
+    - "seventh-proviso s.139(1) filing triggers (foreign travel >2L, electricity >1L, current account deposits >1Cr) do NOT change the form, they only make filing mandatory"   # [form A21]
+  changed_from_old_ref: "old eligibility_reference said ONE house property and NO capital gains: both wrong for AY 2026-27"
+
+ITR-2:
+  applies_to: individual or HUF with NO business/profession income   # [form]
+  use_when_any:                                     # reasons ITR-1 fails
+    - "capital gains other than the ITR-1 s.112A<=1.25L allowance (STCG, LTCG on property/unlisted/debt funds, buyback loss, etc.)"
+    - "more than 2 house properties"
+    - "total income > 50 lakh"
+    - "NRI or RNOR (residential status B/C)"                       # [form: residential status tick in ITR-2]
+    - "director in a company, or unlisted equity held"             # [form: ITR-2 asks both]
+    - "foreign assets / foreign income / signing authority"         # [know: Schedule FA, FSI, TR]
+    - "agricultural income > 5000"                                 # [form]
+    - "loss to carry forward or set off (capital loss, HP loss carry-forward)"  # [form]
+    - "TDS u/s 194N or ESOP deferral"
+    - "crypto / virtual digital asset income (s.115BBH)"           # [know: Schedule VDA]
+    - "lottery/racehorse winnings, s.115BBDA dividend"             # [know]
+  schedule_triggers:                                # drives which parts of the return are needed
+    AL: "total income > 50 lakh (assets and liabilities)  [know]"
+    FA_FSI_TR: "foreign assets or income  [know]"
+    CG_112A_115AD: "any capital gain  [form]"
+    VDA: "VDA transfer  [know]"
+    SPI_PTI: "clubbed income / pass-through (business trust, AIF) income  [form]"
+
+ITR-3:
+  applies_to: individual or HUF with income from business or profession   # [form]
+  use_when_any:
+    - "business/profession income NOT under 44AD/44ADA/44AE"
+    - "partner in a firm with remuneration/interest from it"       # [form: A(k); know]
+    - "presumptive business but ITR-4 conditions fail (NRI, >50L, director, unlisted shares, foreign assets, capital gains beyond 112A 1.25L, losses to carry forward)"
+    - "speculative / F&O / intraday trading income"                # [know]
+    - "declaring lower than presumptive profit (44AD(4)/44AE) i.e. audit applies, or opted out of presumptive scheme earlier within 5 years"  # [form A20 audit block; know]
+  audit_inputs_needed: ["turnover/gross receipts bracket (<=1Cr, 1-10Cr, >10Cr)", "cash receipts % and cash payments % (5% threshold)", "s.44AB audit liability"]  # [form]
+  balance_sheet_required: "unless income declared only under presumptive sections"  # [form]
+
+ITR-4:
+  name: SUGAM
+  applies_to: [individual, HUF, firm other than LLP]    # [form]
+  all_of:
+    - {id: i4_resident, rule: "resident (header says 'resident'; ITR-1 says 'other than not ordinarily resident': treat RNOR as NOT eligible until confirmed)", verified: "form, RNOR ambiguity"}
+    - {id: i4_cap,      rule: "total_income <= 5000000", verified: form}
+    - {id: i4_income,   rule: "business/profession income only under 44AD, 44ADA or 44AE", verified: form}
+    - {id: i4_cg,       rule: "LTCG only u/s 112A and <= 125000", verified: form}
+    - {id: i4_director, rule: "not a director; no unlisted equity; no ESOP deferral; agricultural income <= 5000; no foreign assets", verified: form}
+    - {id: i4_hp,       rule: "<=2 house properties; HP loss set-off max 200000 (no carry-forward)", verified: form}
+  presumptive_limits:
+    "44AD": "turnover <= 2 crore; <= 3 crore if cash receipts <= 5% of total; deemed profit 8% (6% for digital receipts); NOT for professionals, agency business, commission/brokerage"   # [know]
+    "44ADA": "specified professions; gross receipts <= 50 lakh, or 75 lakh if cash receipts <= 5%; deemed profit 50%"   # [form: ITR-4 E3 'limited to Rs.50 Lakhs, however ... 75 lakh']
+    "44AE": "goods carriage business, <= 10 vehicles at any time in the year; fixed per-vehicle income"   # [know]
+  changed_from_old_ref: "old reference said 44ADA 75L / 150L if 95% digital: wrong. Correct is 50L / 75L at the 5% cash test"
+
+ITR-5:
+  applies_to: [LLP, firm (partnership), AOP, BOI, artificial juridical person, cooperative society, local authority, estate of deceased, estate of insolvent, business trust 139(4E), investment fund 139(4F), private trust]
+  not_for: [individual, HUF, company, persons filing ITR-7]          # [web: 'persons other than individuals, HUFs, companies and ITR-7 filers']
+  verified: web
+  details:
+    due_date_ay_2026_27: {non_audit: "2026-08-31", audit_44AB: "2026-10-31", transfer_pricing: "2026-11-30"}   # [web, secondary]
+    signing: "DSC of a partner/designated partner or authorised signatory (e-verification options vary)  [know]"
+    key_schedules: [Balance sheet and P&L unless presumptive, Partner remuneration and interest limits u/s 40(b), Schedule AL, Schedule FA]   # [know]
+    firm_opting_44AD: "a resident non-LLP firm with only presumptive income and total income <= 50L may file ITR-4"   # [form]
+ITR-6:
+  applies_to: "companies registered under the Companies Act, other than companies claiming exemption u/s 11 (charitable/religious purpose)"   # [web]
+  verified: web
+  details:
+    due_date_ay_2026_27: {audit_or_all: "2026-10-31", transfer_pricing: "2026-11-30"}   # [web, secondary]
+    regime_options: "s.115BAA 22% / 115BAB 15% / normal rate with MAT s.115JB 15% of book profit"   # [know]
+    mandatory: "e-filing with DSC (or EVC for eligible companies); tax audit u/s 44AB where applicable"   # [know]
+ITR-7:
+  applies_to: "persons including companies required to furnish returns under 139(4A) (charitable/religious trusts), 139(4B) (political parties), 139(4C) (scientific research associations, news agencies, trade unions, funds/institutions under 10(23C) etc.), 139(4D) (universities/colleges/institutions not otherwise required to file)"   # [web+know]
+  verified: web
+  not_for: [139(4E) business trusts and 139(4F) investment funds (they file ITR-5)]   # corrects an earlier version of this file
+  details:
+    due_date_ay_2026_27: {audit_cases: "2026-10-31", non_audit: "2026-07-31"}   # [web, secondary; verify]
+    audit_forms: "Form 10B/10BB for trusts; registration status (10A/10AB) check  [know]"
+
+# ---------------------------------------------------------------- non-selection forms
+ITR-U:
+  what: "updated return u/s 139(8A), filed ALONG WITH the applicable ITR form (ITR-1..7), with additional tax u/s 140B"   # [form: ITR-U text in rules/source]
+  window: "within 48 months from the end of the relevant AY (Finance Act 2025; was 24)"        # [web, multiple sources]
+  additional_tax_on_tax_plus_interest: {"<=12m": 0.25, "<=24m": 0.50, "<=36m": 0.60, "<=48m": 0.70}   # [web, multiple sources]
+  allowed_for: ["return never filed", "original return filed but income omitted or wrongly reported"]
+  not_allowed_when: ["it would reduce tax liability", "it would create or increase a refund or loss", "search/survey/other proceedings pending  [know; verify]"]
+  cannot_be_revised: true
+  ay_2026_27_last_date: "2031-03-31"
+  act_2025: "Equivalent is s.263(6) of the 2025 Act. Most sources say 48 months; one says 60 months for Tax Year 2026-27 onward. CONFLICTING - verify before building tax-year-2026-27 logic."
+ITR-V: {what: "acknowledgement/verification form for returns not e-verified, sent signed to CPC Bengaluru within the allowed days. Most returns are e-verified (Aadhaar OTP, net banking, DSC), so ITR-V is a fallback.", verified: "form+know"}
+ITR-B: {what: "return of undisclosed income for a block period after a search (s.158BC); never a normal filing option and never recommended by the app", verified: know}
+
+# ---------------------------------------------------------------- missed / late / wrong-form returns  (implemented in rules/compliance.py)
+compliance:
+  principle: "A taxpayer can end up on a different form than the normal one because (a) the return was never filed, (b) the wrong form was filed, (c) income was omitted. The cure depends on timing as well as the form."
+  ay_2026_27_dates:                 # [web, secondary: taxguru, outlookmoney, qwikfilings; verify at incometax.gov.in]
+    original_itr1_itr2: "2026-07-31"
+    original_itr3_itr4_non_audit: "2026-08-31"
+    audit_cases: "2026-10-31"
+    transfer_pricing: "2026-11-30"
+    belated_139_4: "2026-12-31"
+    revised_139_5: "2027-03-31"
+    itr_u_last: "2031-03-31"
+  routes:
+    not_filed:
+      before_due: "139(1) original"
+      due_to_31_dec: "139(4) belated: 234F fee + 234A interest; no carry-forward of business/capital losses; non-business individual cannot opt for old regime  [regime point: know, verify]"
+      after_31_dec: "139(8A) ITR-U: tax + interest + 234F + additional tax 25-70%"
+      after_48_months: "only condonation u/s 119(2)(b)"
+    filed_wrong_form:
+      before_31_mar: "139(5) revised on correct form (reported: fee after 31 Dec, Finance Act 2026  [verify])"
+      defective_notice: "139(9): rectify within 15 days of notice, else the return may be treated as invalid (as if not filed)  [know]"
+      after_revised_window: "ITR-U if tax increases"
+    filed_income_omitted:
+      before_31_mar: "139(5) revised, no additional tax"
+      after: "ITR-U with additional tax"
+  costs:
+    late_fee_234F: {income_up_to_5L: 1000, above_5L: 5000, applies_even_if_no_tax_due: true}
+    interest_234A: "1% per month or part of month on unpaid tax from the due date"
+    interest_234B: "1% per month if advance tax paid is below 90% of assessed tax"
+    interest_234C: "1% per month on shortfall of each advance-tax instalment (15 Jun 15%, 15 Sep 45%, 15 Dec 75%, 15 Mar 100%)"
+    penalty_270A: {under_reporting: "50% of tax on under-reported income", misreporting: "200% of tax on under-reported income"}
+  why_wrong_form_matters: >
+    Typical mistakes: salaried person files ITR-1 but sold shares (needs ITR-2: STCG, or LTCG beyond 1.25L);
+    freelancer files ITR-4 but receipts exceed the 44ADA limit or cash > 5% (needs ITR-3); NRI files ITR-1; person
+    with a foreign bank account files ITR-1. AIS lists the securities sale, property sale and foreign remittance
+    that expose the mismatch.
+  act_2025_mapping:                 # [web: taxguru section table; verify at incometaxindia.gov.in]
+    "139(4) belated": "263(4)"
+    "139(5) revised": "263(5)"
+    "139(8A) updated": "263(6)"
+    "234A": "423"
+    "234B": "424"
+    "234C": "425"
+    "234F": "428"
+    "270A": "439"
+    "192 salary TDS": "392"
+    "80C": "123"
+    applies_from: "Tax Year 2026-27 (income earned from 1 Apr 2026). AY 2026-27 and earlier stay under the 1961 Act, including their penalties and revised returns."
+
+# ---------------------------------------------------------------- old vs new regime  (implemented in rules/regime.py)
+regime:
+  default: new                        # 115BAC(1A)
+  ay_2026_27_new: "slabs 0-4L nil, 4-8L 5%, 8-12L 10%, 12-16L 15%, 16-20L 20%, 20-24L 25%, >24L 30%; 87A rebate up to 60,000 if total income <= 12L; standard deduction 75,000"   # [web, multiple]
+  ay_2026_27_old: "slabs 0-2.5L nil, 2.5-5L 5%, 5-10L 20%, >10L 30% (senior 3L, super senior 5L exemption); 87A up to 12,500 if income <= 5L; standard deduction 50,000"
+  new_regime_allows_only: [standard deduction 75000, employer NPS 80CCD(2) up to 14% of basic+DA, family pension deduction, interest on let-out property loan]
+  old_regime_adds: [HRA, LTA, 80C 1.5L, 80CCD(1B) 50k, 80D, 80E, 80G, 80TTA/TTB, 24(b) self-occupied interest up to 2L, professional tax, HP loss set-off up to 2L]
+  switching_rules: "non-business individual: opt out of new regime via the return on/before the s.139(1) due date, free to switch each year; business-income individual: Form 10-IEA, return to new regime allowed once"   # [know; verify]
+  form_16_hint: "Form 16 Part B states whether the employee opted out of 115BAC(1A): shows what the employer assumed"   # [web]
+
+# ---------------------------------------------------------------- Phase-3 input facts (what the engine needs)
+facts_schema:
+  entity: [individual, huf, firm, llp, aop_boi, company, trust_institution, other]
+  residential_status: [ROR, RNOR, NR]
+  total_income: rupees                       # AIS/TIS + Form 16 derived
+  income_flags: [salary, house_property_count, interest, dividend, dividend_over_10L, agri_income, ltcg_112a_amount, other_capital_gains, vda, lottery_or_gambling, business_presumptive_44AD, business_presumptive_44ADA, business_presumptive_44AE, business_non_presumptive, speculative, partner_remuneration]
+  other_flags: [director, unlisted_equity, foreign_asset_or_income, tds_194N, esop_deferral, loss_carry_forward, nature_of_business_or_profession, turnover, cash_receipt_pct]
+
+# ---------------------------------------------------------------- how AIS / TIS map to those facts
+signals:
+  # Form 16 only proves salary + TDS. Everything below is why AIS/TIS are required.
+  AIS_securities_sale_or_MF_redemption: [other_capital_gains, ltcg_112a_amount]   # => at least check ITR-1 CG limit, usually ITR-2
+  AIS_sale_of_immovable_property_194IA: other_capital_gains                        # => ITR-2
+  AIS_VDA_transfer_194S: vda                                                       # => ITR-2/3
+  AIS_dividend: dividend
+  AIS_interest_savings_FD: interest
+  AIS_rent_received_194I_194IB: house_property_count
+  AIS_business_receipts_GST_turnover_194C_194J: business_non_presumptive         # => ITR-3/4, needs user confirmation
+  AIS_foreign_remittance_LRS: foreign_asset_or_income                              # prompt user; AIS cannot prove no foreign assets
+  AIS_cash_deposit_or_withdrawal_194N: tds_194N
+  TIS_summary_categories: "salary, rent, interest, dividend, securities, other: cross-check against AIS rows"
+  never_inferable_from_documents: [director, unlisted_equity, residential_status, foreign_asset_or_income, loss_carry_forward, esop_deferral]   # must be asked from the user (questionnaire step)

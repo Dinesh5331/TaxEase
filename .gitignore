@@ -36,7 +36,9 @@ yarn-error.log*
 
 # OS
 Thumbs.db
-backend/docs/
-backend/rag/docs/
+# Corpus PDFs are large and not committed (see *.pdf below); text corpus + rules ARE tracked
+backend/api/rag/
+backend/api/docs.zip
 *.pdf
 *.zip
+backend/eval/out/
