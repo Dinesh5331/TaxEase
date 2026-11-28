@@ -13,11 +13,12 @@ def build_citations(items) -> list:
             continue
         seen.add(key)
         sec = m.get("section")
+        unit = "rule" if m.get("text_status") == "rules" else "section"   # Rules are numbered, not sectioned
         out.append({
             "document": m.get("document_name") or m.get("file") or "unknown",
             "file": m.get("file"),
             "section": sec,
-            "label": f"{m.get('document_name') or m.get('file')}" + (f", section {sec}" if sec else "") + f", p.{m.get('page', '?')}",
+            "label": f"{m.get('document_name') or m.get('file')}" + (f", {unit} {sec}" if sec else "") + f", p.{m.get('page', '?')}",
             "act_version": m.get("act_version", "unknown"),
             "text_status": m.get("text_status", "unknown"),
             "page": m.get("page"),

@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+myenv/
+.venv/
+vectorstore/
+**/__pycache__/
+*.db
+eval/out/
+api/rag/
+api/docs.zip

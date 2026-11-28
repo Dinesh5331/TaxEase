@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from rag.citations import build_citations  # noqa: E402
 from rag.fusion import rrf_fuse  # noqa: E402
 from rag.sections import (chunk_section, choose_act, filter_by_act, legal_meta, section_chunks,  # noqa: E402
-                          split_sections, Section)
+                          split_sections, swap_inverted_pages, Section)
 
 LAWS = Path(__file__).resolve().parents[1] / "docs" / "laws"
 
@@ -77,25 +77,88 @@ class Sections(unittest.TestCase):
         self.assertIn("(29)", chunks[-1])
 
     def test_legal_meta_is_explicit(self):
-        self.assertEqual(legal_meta("Income-tax_Bill(2025).pdf")["text_status"], "bill-as-introduced-superseded")
+        self.assertEqual(legal_meta("Income-tax_Bill(2025)-amended(2026).pdf")["text_status"], "act")
         self.assertEqual(legal_meta("Income-tax_Bill(1962).pdf")["act_version"], "1961")
+        rules = {"file": "r.pdf", "section": "114B", "page": 1, **legal_meta("Income-tax_Bill(1962).pdf")}
+        cite = build_citations([{"doc": SimpleNamespace(metadata=rules, page_content="x")}])[0]
+        self.assertEqual(cite["label"], "r.pdf, rule 114B, p.1")
         self.assertEqual(legal_meta("itr_2-guidelines.pdf")["text_status"], "form-instructions")
 
-    @unittest.skipUnless((LAWS / "Income-tax_Bill(2025).pdf").exists(), "corpus PDF not present")
+    @unittest.skipUnless((LAWS / "Income-tax_Bill(2025)-amended(2026).pdf").exists(), "corpus PDF not present")
     def test_real_bill_pages_yield_sections(self):
-        txt = subprocess.run(["pdftotext", "-f", "56", "-l", "75", str(LAWS / "Income-tax_Bill(2025).pdf"), "-"],
-                             capture_output=True, text=True).stdout
+        txt = subprocess.run(["pdftotext", "-f", "56", "-l", "75", str(LAWS / "Income-tax_Bill(2025)-amended(2026).pdf"), "-"],
+                             capture_output=True, text=True, errors="replace").stdout
         secs = split_sections([(56, txt)])
         nums = [s.number for s in secs if s.number]
-        self.assertIn("18", nums)
+        self.assertIn("30", nums)
         ints = [int("".join(c for c in n if c.isdigit())) for n in nums]
         self.assertEqual(ints, sorted(ints))                    # monotonic: no noise headings accepted
+
+
+class FrontMatter(unittest.TestCase):
+    BILL = [(1, "ARRANGEMENT OF CLAUSES\n1. Short title.\n2. Definitions.\n3. Return of income.\n"),
+            (2, "BE it enacted by Parliament\n1. (1) This Act may be called X.\n2. In this Act,\n"),
+            (3, "3. (1) Every person shall furnish a return.\nSCHEDULE I\ntable text\n")]
+
+    def test_table_of_clauses_is_not_the_body(self):
+        out = section_chunks(self.BILL, {"file": "x.pdf", "source": "law"})
+        self.assertEqual([m["section"] for _, m in out], [None, "1", "2", "3", None])
+        text, meta = next((t, m) for t, m in out if m["section"] == "3")
+        self.assertEqual(meta["page"], 3)
+        self.assertEqual(meta["section_heading"], "Return of income")
+        self.assertTrue(text.startswith("[x.pdf, section 3: Return of income] "))
+        self.assertNotIn("table text", text)
+
+    def test_stray_number_does_not_block_later_headings(self):
+        pages = [(1, "1. (1) A\n2. (1) B\n29. (1) stray table row\n3. (1) C\n4. (1) D\n")]
+        self.assertEqual([s.number for s in split_sections(pages)], ["1", "2", "3", "4"])
+
+
+class EnactedActLayout(unittest.TestCase):
+    PAGES = [(1, "BE it enacted\nShort title.\n1.\t(1) This Act may be called X.\n"
+                 "  1.\t Substituted for \u201cold\u201d by the Finance Act, 2026.\n  2.\t Inserted by the Finance Act, 2026.\n"),
+             (2, "Rebate of income-tax in case of certain\nindividuals.\n2.\t(1) A resident individual.\n")]
+
+    def test_footnotes_are_dropped_and_margin_titles_used(self):
+        out = section_chunks(self.PAGES, {"file": "Income-tax_Bill(2025)-amended(2026).pdf", "source": "law"})
+        self.assertEqual([m["section"] for _, m in out if m["section"]], ["1", "2"])
+        self.assertNotIn("Substituted", " ".join(t for t, _ in out))
+        self.assertEqual(out[-1][1]["section_heading"], "Rebate of income-tax in case of certain individuals")
+
+
+class PortalActLayout(unittest.TestCase):
+    FOOT = "Income Tax Department\nMinistry of Finance, Government of India\n"
+    PAGES = [(1, "Return of income.\n139. (1) Every person shall furnish.\n" + FOOT),
+             (2, "INCOME-TAX ACT, 1961\nBE it enacted\n137. (1) Disclosure of.\n"),
+             (3, "Disclosure.\n138. (1) The Board may.\n4. Ins. by Act No. 7 of 2025, w.e.f. 1-4-2025.\nold repealed words\n" + FOOT),
+             (4, "Permanent account number.\n139A. (1) Every person,\n")]
+
+    def test_displaced_section_is_restored_and_footnotes_dropped(self):
+        out = section_chunks(self.PAGES, {"file": "Income-tax_Bill(1961).pdf", "source": "law"})
+        self.assertEqual([m["section"] for _, m in out if m["section"]], ["137", "138", "139", "139A"])
+        everything = " ".join(t for t, _ in out)
+        self.assertNotIn("old repealed words", everything)
+        self.assertNotIn("Ministry of Finance", everything)
+        self.assertEqual(next(m for _, m in out if m["section"] == "139")["page"], 1)
+
+
+class InvertedPages(unittest.TestCase):
+    def test_section_printed_early_is_swapped_back(self):
+        pages = [(1, "148. (1) a\n"), (2, "150.(1) c\n"), (3, "Time limit.\n149. (1) b\n"), (4, "151. d\n151A. (1) e\n")]
+        self.assertEqual([n for n, _ in swap_inverted_pages(pages)], [1, 3, 2, 4])
+
+
+class HyphenatedSections(unittest.TestCase):
+    def test_80_IA_is_its_own_section(self):
+        secs = split_sections([(1, "80HHF. (1) a\n80-I. (1) b\n80-IA. (1) c\n80JJA. (1) d\n")])
+        self.assertEqual([s.number for s in secs], ["80HHF", "80I", "80IA", "80JJA"])
 
 
 class ActChoice(unittest.TestCase):
     def test_routing(self):
         self.assertEqual(choose_act("What does the Income-tax Act, 2025 say about tax year 2026-27?"), "2025")
         self.assertEqual(choose_act("Which ITR for AY 2026-27 if I sold shares?"), "1961")
+        self.assertEqual(choose_act("What is in the 2025 Act about rebate?"), "2025")
         self.assertEqual(choose_act("Explain section 139(4) belated return"), "1961")
         self.assertIsNone(choose_act("what is a house property"))
         self.assertIsNone(choose_act("Compare section 139(4) with section 263 under the 2025 Act for AY 2026-27"))
@@ -103,9 +166,10 @@ class ActChoice(unittest.TestCase):
     def test_filter_keeps_references_and_never_empties(self):
         def item(act, status="act"):
             return {"doc": SimpleNamespace(metadata={"act_version": act, "text_status": status})}
-        items = [item("1961"), item("2025"), item("1961", "project-reference"), item("2025", "form-instructions")]
+        items = [item("1961"), item("2025"), item("1961", "project-reference"), item("1961", "form-instructions")]
         got = filter_by_act(items, "1961")
         self.assertEqual(len(got), 3)
+        self.assertEqual(len(filter_by_act(items, "2025")), 2)   # 1961 form instructions excluded
         self.assertTrue(filter_by_act([item("2025")], "1961"))
         self.assertEqual(filter_by_act(items, None), items)
 

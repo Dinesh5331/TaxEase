@@ -3,7 +3,11 @@ import re
 from rank_bm25 import BM25Okapi
 
 from rag.fusion import rrf_fuse
-from rag.vector_store import faiss_search
+
+
+def faiss_search(query, index, docs, k):
+    from rag.vector_store import faiss_search as search     # imported late: loads the embedding library
+    return search(query, index, docs, k)
 
 
 class HybridRetriever:
@@ -33,70 +37,46 @@ class HybridRetriever:
 
         return expanded
 
-    @staticmethod
-    def _normalize_scores(score_map):
-        if not score_map:
-            return {}
+    def _bm25_ranking(self, query_tokens, allowed, size):
+        scores = self.bm25.get_scores(query_tokens)
+        top = sorted((i for i in allowed if scores[i] > 0), key=lambda i: scores[i], reverse=True)[:size]
+        return {i: float(scores[i]) for i in top}
 
-        values = list(score_map.values())
-        min_score = min(values)
-        max_score = max(values)
+    def _dense_ranking(self, query, allowed, size):
+        # IndexFlatIP scores every vector anyway, so ask for all and filter before cutting to size.
+        results = faiss_search(query, self.index, self.docs, len(self.docs))
+        out = {}
+        for r in results:
+            idx = self.doc_id_map[id(r["doc"])]
+            if idx in allowed:
+                out[idx] = r["faiss_score"]
+                if len(out) == size:
+                    break
+        return out
 
-        if max_score == min_score:
-            return {key: 1.0 for key in score_map}
-
-        return {
-            key: (score - min_score) / (max_score - min_score)
-            for key, score in score_map.items()
-        }
-
-    def search(self, query, k=8):
+    def search(self, query, k=8, predicate=None, on_error=None):
+        """-> (items, failed). `failed` names the retrievers that raised; the other one still answers.
+        `predicate(metadata)` restricts the search before ranking, so a filter cannot empty the result."""
         query_tokens = self._tokenize(query)
         if not query_tokens:
-            return []
+            return [], []
         query_tokens = self._expand_query_tokens(query_tokens)
+        allowed = {i for i, d in enumerate(self.docs) if predicate is None or predicate(d.metadata)}
+        size = max(k * 2, 10)
 
-        candidate_pool_size = max(k * 2, 10)
-
-        bm25_scores = self.bm25.get_scores(query_tokens)
-        bm25_top_idx = sorted(
-            range(len(bm25_scores)),
-            key=lambda i: bm25_scores[i],
-            reverse=True
-        )[:candidate_pool_size]
-
-        bm25_score_map = {
-            idx: float(bm25_scores[idx])
-            for idx in bm25_top_idx
-        }
-
-        faiss_results = faiss_search(
-            query,
-            self.index,
-            self.docs,
-            candidate_pool_size
-        )
-        faiss_score_map = {
-            self.doc_id_map[id(result["doc"])]: result["faiss_score"]
-            for result in faiss_results
-        }
+        failed, rankings = [], {}
+        for name, run in (("bm25", lambda: self._bm25_ranking(query_tokens, allowed, size)),
+                          ("dense", lambda: self._dense_ranking(query, allowed, size))):
+            try:
+                rankings[name] = run()
+            except Exception as e:
+                failed.append(name)
+                rankings[name] = {}
+                if on_error:
+                    on_error(name, e)
 
         # Reciprocal rank fusion: ranks, not raw scores, so BM25 and cosine need no common scale.
-        fused = rrf_fuse([
-            [i for i in bm25_top_idx if bm25_score_map[i] > 0],
-            [self.doc_id_map[id(r["doc"])] for r in faiss_results],
-        ])
-
-        candidate_indices = set(fused)
-        combined = []
-
-        for idx in candidate_indices:
-            combined.append({
-                "doc": self.docs[idx],
-                "bm25_score": bm25_score_map.get(idx, 0.0),
-                "faiss_score": faiss_score_map.get(idx, 0.0),
-                "hybrid_score": fused[idx],
-            })
-
-        combined.sort(key=lambda item: item["hybrid_score"], reverse=True)
-        return combined[:k]
+        fused = rrf_fuse([list(rankings["bm25"]), list(rankings["dense"])])
+        best = sorted(fused, key=fused.get, reverse=True)[:k]
+        return [{"doc": self.docs[i], "bm25_score": rankings["bm25"].get(i, 0.0),
+                 "faiss_score": rankings["dense"].get(i, 0.0), "hybrid_score": fused[i]} for i in best], failed

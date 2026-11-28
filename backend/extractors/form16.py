@@ -20,14 +20,11 @@ class ExtractionError(Exception):
 
 
 def pdf_layout_text(path) -> str:
-    """Text with columns kept on one line. poppler first (most faithful), then PyMuPDF words, then pypdf."""
+    """Text with columns kept on one line. PyMuPDF words first (pinned, same on every host), then pdftotext, then pypdf.
+
+    pdftotext is not first: some builds (xpdf 4.00, shipped with Git for Windows) shift the amount column by a row
+    under -layout, which yields wrong figures rather than an error."""
     path = str(path)
-    try:
-        out = subprocess.run(["pdftotext", "-layout", path, "-"], capture_output=True, text=True, timeout=60)
-        if out.returncode == 0 and out.stdout.strip():
-            return out.stdout
-    except (FileNotFoundError, subprocess.TimeoutExpired):
-        pass
     try:
         import fitz  # PyMuPDF
         lines = []
@@ -48,6 +45,12 @@ def pdf_layout_text(path) -> str:
         if text.strip():
             return text
     except ImportError:
+        pass
+    try:
+        out = subprocess.run(["pdftotext", "-layout", path, "-"], capture_output=True, text=True, timeout=60)
+        if out.returncode == 0 and out.stdout.strip():
+            return out.stdout
+    except (FileNotFoundError, subprocess.TimeoutExpired):
         pass
     try:
         import pypdf

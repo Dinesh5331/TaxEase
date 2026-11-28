@@ -15,6 +15,35 @@ so Python deps, the Groq call and Postgres were never exercised). Run the app on
 | 6 | Evaluation | golden Q&A (21, draft) + harness; engine gate runs now; answers/RAGAS modes need the index and a key |
 | 7 | Claude plugin / MCP connector | **dropped** (code removed 2026-11-22; revisit only if the product should live inside Claude) |
 
+## Runtime check, 2026-11-27 (Windows, local SQLite instead of Postgres)
+- Ran: signup, `/api/itr/questionnaire`, `/api/itr/analyze`, `/chat` with citations, `/upload`, index rebuild, UI build, `/check` page.
+- Fixed: retired Groq model; xpdf `pdftotext` misreading Form 16; full PAN sent to the LLM by `/upload`; the 1962 Rules
+  labelled as the 1961 Act; UI not using the rules engine (new `/check` page); broken `render.yaml`.
+- Not verified: Postgres, `backend/Dockerfile` build, `eval.run_eval answers` / `ragas`, a scanned Form 16.
+- `test_pypdf_fallback_gives_same_numbers` errors where `pypdf` is not installed (it is in requirements.txt).
+- Still open: no 1961 Act text in the corpus; `/chat`, `/upload`, `/itr/*` have no auth; `/upload` still lets the LLM
+  suggest an ITR form, against the rules-engine design.
+
+## Production RAG pass, 2026-11-28 (after arpitbhayani.me/blogs/rag-production)
+- Added: content-hash change detection and embedding reuse, versioned index with validation, atomic swap and one
+  previous version for rollback (`rag/index_store.py`), per-request trace (`rag/tracing.py`, `RAG_TRACE_FILE`),
+  optional sampled faithfulness judge (`rag/judge.py`, `RAG_JUDGE_SAMPLE`), section heading on every law chunk.
+- Failure paths: either retriever, reranker or LLM down; nothing relevant; bad query; stale or corrupt index
+  (`tests/test_rag_failures.py`).
+- Fixed: most law chunks carried one section number (table of clauses read as the body); selection questions never
+  saw search results; "ITR due date" parsed as form ITR-DUE; reference file put business trusts under ITR-7.
+- Not done (not needed at this size): alias traffic shifting, valid_from upserts, Postgres document registry.
+- `eval.run_eval answers` gate FAILS: the corpus has no 1961 Act, nothing on late filing / updated returns / 234F /
+  270A, and no 1961-to-2025 section map.
+- Later on 2026-11-28: the superseded 2025 Bill was replaced by the enacted Act (as amended by Finance Act 2026).
+  Section-wise chunks of up to 800 chars; amendment footnotes dropped; titles from the line above each section.
+  535 of 536 sections labelled (207 not detected). `docs/eligibility` and the ITR guideline PDFs still use fixed-size chunks.
+
+- 1961 Act added (incometaxindia.gov.in, as amended by Finance Act 2026), which closes the "no 1961 Act" gap above:
+  5362 section chunks; page footers and footnotes removed, out-of-order pages restored. The answer evaluation after it
+  is not valid (13 of 21 hit the Groq daily token limit): re-run `python -m eval.run_eval answers`. Its substring
+  checks expect "5,000" / "50%" where the Act writes words.
+
 ## Phase 1 - what changed and why
 - `requirements.txt`: added missing bcrypt, email-validator, pyyaml, langchain-text-splitters; dropped unused passlib,
   langchain meta-package; loosened sentence-transformers (2.2.2 breaks on current huggingface_hub). **Not install-tested.**

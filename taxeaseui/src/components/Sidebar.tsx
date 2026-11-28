@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, FileUp, FileSpreadsheet, Bot, Leaf } from "lucide-react";
+import { LayoutDashboard, FileUp, FileSpreadsheet, Bot, Leaf, ListChecks } from "lucide-react";
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
 
@@ -12,6 +12,7 @@ function cn(...inputs: ClassValue[]) {
 
 const navItems = [
   { name: "Dashboard", href: "/", icon: LayoutDashboard },
+  { name: "ITR Form Check", href: "/check", icon: ListChecks },
   { name: "Upload Form 16", href: "/upload", icon: FileUp },
   { name: "ITR Mapping", href: "/mapping", icon: FileSpreadsheet },
   { name: "AI Assistant", href: "/assistant", icon: Bot },

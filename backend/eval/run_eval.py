@@ -44,11 +44,13 @@ def load_questions(n=None):
 def answers_report(n=None) -> dict:
     from api.routers.chat import load_rag
     from api.state import app_state
-    from rag.rag_pipeline import run_rag_cited
+    from rag.rag_pipeline import run_rag_result
     load_rag()
     rows, inc, inc_total, viol, cited, cited_total = [], 0, 0, 0, 0, 0
     for q in load_questions(n):
-        answer, cites = run_rag_cited(app_state["model"], app_state["index"], app_state["docs"], q["q"])
+        result = run_rag_result(app_state["model"], app_state["index"], app_state["docs"], q["q"],
+                                index_meta=app_state.get("index_meta"))
+        answer, cites = result.answer, result.citations
         low = answer.lower()
         miss = [m for m in q["must_include"] if m not in low]
         bad = [m for m in q["must_not_include"] if m in low]
@@ -61,7 +63,8 @@ def answers_report(n=None) -> dict:
             if q["act"] and cites and not any(c["act_version"] in (q["act"], "unknown") or c["text_status"] in ("project-reference", "form-instructions") for c in cites):
                 bad.append(f"no citation from Act {q['act']}")
                 viol += 1
-        rows.append({"id": q["id"], "missing": miss, "violations": bad, "citations": len(cites), "answer": answer[:400]})
+        rows.append({"id": q["id"], "status": result.status, "missing": miss, "violations": bad,
+                     "citations": len(cites), "answer": answer[:400]})
     return {"must_include_rate": inc / max(inc_total, 1), "must_not_violations": viol,
             "citation_rate": cited / max(cited_total, 1), "rows": rows}
 

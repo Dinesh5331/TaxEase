@@ -9,6 +9,7 @@ log = logging.getLogger(__name__)
 router = APIRouter()
 
 ALLOWED_EXTENSIONS = {".pdf", ".png", ".jpg", ".jpeg"}
+MAX_UPLOAD_BYTES = 10 * 1024 * 1024
 
 
 @router.post("/upload")
@@ -31,8 +32,12 @@ def upload_form16(file: UploadFile = File(...)):
 
     log.info("[INFO] Upload received: %s", file.filename)
 
+    content = file.file.read(MAX_UPLOAD_BYTES + 1)
+    if len(content) > MAX_UPLOAD_BYTES:
+        raise HTTPException(status_code=413, detail="File larger than 10 MB.")
+
     with tempfile.NamedTemporaryFile(delete=False, suffix=ext.lower()) as tmp:
-        tmp.write(file.file.read())
+        tmp.write(content)
         tmp_path = tmp.name
 
     try:
@@ -43,14 +48,16 @@ def upload_form16(file: UploadFile = File(...)):
         if not raw_text.strip():
             raise HTTPException(status_code=422, detail="Could not extract any text from the file.")
 
+        from ocr.parser import mask_pans, parse_json
+        raw_text = mask_pans(raw_text)   # PAN never leaves this process
+
         log.info("[INFO] Extracting structured data with AI...")
         from ocr.extractor import extract_form16_data
-        from ocr.parser import parse_json
         structured_raw = extract_form16_data(raw_text)
         data = parse_json(structured_raw)
 
         log.info("[INFO] Running RAG for ITR recommendation...")
-        from rag.rag_pipeline import run_rag
+        from rag.rag_pipeline import run_rag_result
 
         itr_query = f"""
 User financial details extracted from Form 16:
@@ -60,12 +67,14 @@ Based on the above financial details, determine:
 1. Which ITR form should this person file and why?
 2. What key eligibility conditions apply?
 """
-        itr_recommendation = run_rag(
+        itr_recommendation = run_rag_result(
             app_state["model"],
             app_state["index"],
             app_state["docs"],
             itr_query,
-        )
+            index_meta=app_state.get("index_meta"),
+            search_query="Which ITR form should a salaried individual file for AY 2026-27, and who is eligible?",
+        ).answer
 
         return {
             "success": True,

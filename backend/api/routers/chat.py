@@ -5,6 +5,8 @@ import threading
 
 from fastapi import APIRouter, HTTPException
 
+from rag.rag_pipeline import MAX_QUERY_CHARS, run_rag_result
+
 from ..schemas import ChatRequest, ChatResponse
 from ..state import app_state
 
@@ -21,7 +23,8 @@ _load_lock = threading.Lock()
 
 
 def load_rag():
-    """Load models + index once per process. Safe to call from concurrent requests."""
+    """Load models + index once per process. Safe to call from concurrent requests. A model that will not load
+    is skipped (the pipeline falls back); only a missing index is fatal."""
     with _load_lock:
         if "index" in app_state:
             return
@@ -31,17 +34,26 @@ def load_rag():
         from rag.embedder import get_embedding_model
         from rag.reranker import get_reranker
 
-        log.info("Loading embedding model + reranker")
-        get_embedding_model()
-        get_reranker()
+        for name, load in (("embedding model", get_embedding_model), ("reranker", get_reranker)):
+            try:
+                load()
+            except Exception:
+                log.exception("Could not load the %s; continuing without it", name)
 
         log.info("Loading/building FAISS index")
-        index, docs = setup()
+        index, docs, meta = setup()
+        if meta.get("stale"):
+            log.error("Serving an older index because the rebuild failed: %s", meta["stale"])
 
-        app_state["model"] = get_model()
+        try:
+            app_state["model"] = get_model()
+        except Exception:
+            log.exception("Language model client unavailable; answers will list sources only")
+            app_state["model"] = None
         app_state["docs"] = docs
+        app_state["index_meta"] = meta
         app_state["index"] = index  # set last: its presence means everything is ready
-        log.info("RAG ready: %d chunks", len(docs))
+        log.info("RAG ready: %d chunks, index %s", len(docs), meta.get("version"))
 
 
 # Plain `def` (not async): the work is blocking (embeddings, reranker, Groq),
@@ -50,21 +62,23 @@ def load_rag():
 def chat(req: ChatRequest):
     if not req.query.strip():
         raise HTTPException(status_code=400, detail="Query cannot be empty.")
+    if len(req.query) > MAX_QUERY_CHARS:
+        raise HTTPException(status_code=413, detail=f"Query is longer than {MAX_QUERY_CHARS} characters.")
 
     if "index" not in app_state:
         try:
             load_rag()
-        except Exception as e:
+        except Exception:
             log.exception("RAG initialization failed")
-            raise HTTPException(status_code=500, detail=f"RAG initialization failed: {e}")
+            raise HTTPException(status_code=503, detail="Search is unavailable right now. Try again later.")
 
-    from rag.rag_pipeline import run_rag_cited
-
-    answer, citations = run_rag_cited(
+    result = run_rag_result(
         app_state["model"],
         app_state["index"],
         app_state["docs"],
         req.query.strip(),
         debug=req.debug,
+        index_meta=app_state.get("index_meta"),
     )
-    return ChatResponse(answer=answer, citations=citations)
+    return ChatResponse(answer=result.answer, citations=result.citations, status=result.status,
+                        trace_id=result.trace_id)

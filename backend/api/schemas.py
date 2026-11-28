@@ -41,6 +41,8 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     answer: str
     citations: list = []
+    status: str = "ok"
+    trace_id: str = ""
 
 
 # ── Health ───────────────────────────────────────────────────────────────────

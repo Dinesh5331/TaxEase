@@ -7,7 +7,7 @@ from PIL import Image
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.documents import Document
 from rag.config import CHUNK_SIZE, CHUNK_OVERLAP
-from rag.sections import legal_meta, section_chunks
+from rag.sections import EXCLUDED, legal_meta, section_chunks
 
 
 def clean_text(text):
@@ -61,6 +61,9 @@ def load_documents(folder_path, source_type, source_label=None):
 
     # ---- PDF files ----
     for pdf_path in sorted(folder.rglob("*.pdf")):
+        if pdf_path.name in EXCLUDED:
+            print(f"  skipping {pdf_path.name}: {EXCLUDED[pdf_path.name]}")
+            continue
         pdf = pymupdf.open(pdf_path)
         file_name = pdf_path.name
         document_name = pdf_path.stem

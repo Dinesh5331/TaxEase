@@ -254,8 +254,8 @@ APPLICABLE TO:
 - Artificial Juridical Person (AJP)
 - Cooperative Societies
 - Local Authorities
-- Business Trusts (not covered under Section 139(4A) to 139(4F))
-- Investment Funds
+- Business Trusts, which file under Section 139(4E)
+- Investment Funds, which file under Section 139(4F)
 
 WHO CANNOT USE ITR-5:
 - Individual taxpayers (use ITR-1, ITR-2, ITR-3, or ITR-4)
@@ -265,8 +265,6 @@ WHO CANNOT USE ITR-5:
 - Entities filing under Section 139(4B) – Political Parties (use ITR-7)
 - Entities filing under Section 139(4C) – Research institutions, news agencies (use ITR-7)
 - Entities filing under Section 139(4D) – Universities and Colleges (use ITR-7)
-- Entities filing under Section 139(4E) – Business Trusts filing under ITR-7
-- Entities filing under Section 139(4F) – Investment Funds filing under ITR-7
 
 ALLOWED INCOME SOURCES:
 - Business or Profession income (Section 28)
@@ -352,24 +350,18 @@ Entities REQUIRED to file return under specific sections:
 4. Section 139(4D) – Universities, Colleges, and other institutions
    (required to furnish returns even if not liable to pay tax)
 
-5. Section 139(4E) – Business Trusts (Real Estate Investment Trusts / REITs,
-   Infrastructure Investment Trusts / InvITs)
-
-6. Section 139(4F) – Investment Funds (Category I and II AIFs registered
-   with SEBI under the SEBI Regulations)
-
 WHO CANNOT USE ITR-7:
 - Individual taxpayers (use ITR-1 to ITR-3)
 - HUF (use ITR-2 or ITR-3)
 - Companies NOT claiming exemption under Section 11 (use ITR-6)
 - Firms, LLPs, AOP, BOI (use ITR-5)
+- Business trusts (139(4E)) and investment funds (139(4F)) (use ITR-5)
 - Regular trusts not required under Section 139(4A) to 139(4F)
 
 ALLOWED INCOME SOURCES:
 - Depends on entity type - can include all income heads
 - Charitable trusts: income from property + voluntary contributions
 - Political parties: all income sources
-- Business trusts/investment funds: pass-through income, business income
 
 TAX EXEMPTIONS AVAILABLE:
 - Section 11 – Exemption for income applied to charitable/religious purposes
@@ -387,8 +379,6 @@ RELEVANT SECTIONS:
 - Section 139(4B) – Political parties return filing
 - Section 139(4C) – Specified institutions return filing
 - Section 139(4D) – Universities/Colleges return filing
-- Section 139(4E) – Business trusts return filing
-- Section 139(4F) – Investment funds return filing
 - Section 115BBC – Anonymous donations taxable at 30%
 
 ==============================================================================

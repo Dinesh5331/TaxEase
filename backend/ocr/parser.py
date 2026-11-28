@@ -1,6 +1,17 @@
 import json
 import re
 
+PAN_RE = re.compile(r"(?<![A-Z0-9])([A-Z]{5}[0-9]{4}[A-Z])(?![A-Z0-9])", re.IGNORECASE)
+
+
+def _mask(pan):
+    return f"{pan[:2].upper()}{'*' * 6}{pan[-2:].upper()}"
+
+
+def mask_pans(text):
+    """Replace every PAN with its masked form. Run on document text before it goes to an LLM."""
+    return PAN_RE.sub(lambda m: _mask(m.group(1)), text)
+
 
 def clean_json_response(response):
     """

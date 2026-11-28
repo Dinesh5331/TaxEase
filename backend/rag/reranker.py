@@ -1,16 +1,16 @@
-from sentence_transformers import CrossEncoder
-
 _reranker = None
+MAX_PAIRS = 80
 
 
 def get_reranker():
     global _reranker
 
     if _reranker is None:
+        from sentence_transformers import CrossEncoder
         print("Loading reranker (only once)...")
         _reranker = CrossEncoder(
             "cross-encoder/ms-marco-MiniLM-L-6-v2",
-            max_length=256
+            max_length=512
         )
 
     return _reranker
@@ -18,7 +18,7 @@ def get_reranker():
 
 def rerank(query, docs, top_k=5):
     reranker = get_reranker()
-    docs = docs[:20]
+    docs = docs[:MAX_PAIRS]
 
     if not docs:
         return []

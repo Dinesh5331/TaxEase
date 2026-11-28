@@ -1,44 +1,28 @@
+# Render blueprint for the backend and database. The UI is deployed by Vercel (root directory: taxeaseui).
+# The backend needs about 1 GB RAM; Render's 512 MB instances will run out of memory.
 services:
   - type: web
     name: taxassist-backend
-    runtime: python
-    pythonVersion: 3.11.3
+    runtime: docker
     rootDir: backend
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "python -m uvicorn api.app:app --host 0.0.0.0 --port $PORT --workers 1"
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: standard
+    healthCheckPath: /api/health
     envVars:
       - key: DATABASE_URL
-        scope: secret
+        fromDatabase:
+          name: taxassist-db
+          property: connectionString
       - key: GROQ_API_KEY
-        scope: secret
+        sync: false
       - key: SECRET_KEY
-        scope: secret
+        generateValue: true
       - key: ALLOWED_ORIGINS
-        value: https://your-frontend.vercel.app
-      - key: DEBUG
-        value: "false"
-    healthCheckPath: /api/health
-
-  - type: web
-    name: taxassist-frontend
-    runtime: node
-    nodeVersion: 18
-    buildCommand: "npm ci && npm run build"
-    startCommand: "npm start"
-    workingDirectory: ./taxeaseui
-    envVars:
-      - key: NEXT_PUBLIC_BACKEND_URL
-        scope: env_specific
-        preview:
-          value: https://taxassist-backend.onrender.com
-        production:
-          value: https://taxassist-backend.onrender.com
-    port: 3000
+        value: https://tax-ease-ep2t.vercel.app
 
 databases:
   - name: taxassist-db
     databaseName: taxassist
     user: taxassist
     plan: free
-    version: 15
-    region: oregon
